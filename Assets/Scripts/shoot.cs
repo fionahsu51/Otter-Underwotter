@@ -17,7 +17,8 @@ public class shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Mouse.current.leftButton.wasPressedThisFrame){
+        if(Input.GetMouseButton(1))
+        {
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         }
     }
