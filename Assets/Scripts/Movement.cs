@@ -4,47 +4,36 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 1.0f;
+    Vector3 newPosition;
+    public float speed;
 
-    // Start is called before the first frame update
     void Start()
     {
-        gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-
+        newPosition = transform.position;
     }
-
-    //public float speed = 1.0f;
-    bool facingRight = true;
-
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        float horizontal_direction = Input.GetAxis("Horizontal");
-        float vertical_direction = Input.GetAxis("Vertical");
-        var transform = this.GetComponent<Transform>(); //Can also be written as Transform transform = this.GetCompo....
-        var position = transform.position;
-        position.x += horizontal_direction * this.speed * Time.deltaTime;
-        position.y += vertical_direction * this.speed * Time.deltaTime;
-        transform.position = position;
-
-        if (horizontal_direction > 0 && facingRight)
+        faceMouse();
+        if (Input.GetMouseButton(0))
         {
-            Flip();
-        }
-
-        if (horizontal_direction < 0 && !facingRight)
-        {
-            Flip();
+            dash();
         }
     }
 
-    //Flip player sprite
-    void Flip()
+    void faceMouse()
     {
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
-        facingRight = !facingRight;
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        transform.up = direction;
+    }
+
+    void dash()
+    {
+        Debug.Log("dash");
+        transform.position += transform.up * Time.deltaTime * speed;
     }
 }
