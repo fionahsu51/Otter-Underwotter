@@ -6,7 +6,6 @@ public class Movement : MonoBehaviour
 {
     Vector3 newPosition;
     public float speed;
-    public float health;
     bool mouseHover = false;
 
     void Start()
@@ -21,11 +20,6 @@ public class Movement : MonoBehaviour
         if (Input.GetMouseButton(0) && mouseHover == false)
         {
             OnMouseExit();
-        }
-
-        if (health == 0)
-        {
-            SceneManager.LoadScene("Title_Screen");
         }
     }
 
@@ -57,15 +51,5 @@ public class Movement : MonoBehaviour
     {
         Debug.Log("dash");
         transform.position += transform.up * Time.deltaTime * speed;
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("collision between player and enemy");
-        Enemy enemy = collision.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            health -= 10;
-        }
     }
 }
