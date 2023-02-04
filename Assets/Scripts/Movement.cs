@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
     {
         //If your mouse hovers over the GameObject with the script attached, output this message
         mouseHover = true;
-        Debug.Log("Mouse is over GameObject.");
+        //Debug.Log("Mouse is over GameObject.");
     }
 
     void OnMouseExit()
@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
         //The mouse is no longer hovering over the GameObject so output this message each frame
         mouseHover = false;
         dash();
-        Debug.Log("Mouse is no longer on GameObject.");
+        //Debug.Log("Mouse is no longer on GameObject.");
     }
 
     void faceMouse()
@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
 
     void dash()
     {
-        Debug.Log("dash");
+        //Debug.Log("dash");
         transform.position += transform.up * Time.deltaTime * speed;
     }
 }

@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision){
 
-        Debug.Log("collision");
+        //Debug.Log("collision");
 
         Enemy enemy = collision.GetComponent<Enemy>();
 

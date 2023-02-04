@@ -20,8 +20,6 @@ public class Bullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collision){
-
-        Debug.Log("collision");
         
         Enemy enemy = collision.GetComponent<Enemy>();
 
