@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40dadc9fd973ad14695eef44c9d9947e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesToSpawn: 3
+  enemiesToSpawn: 10
   enemyPrefab: {fileID: 1638874248220091298, guid: 613b669d741a2d64ebf2a3e12c1bde0e, type: 3}
   chestPrefab: {fileID: 1417188854212725375, guid: cb6bc9e3ace831246880c4d8fd9e111e, type: 3}
 --- !u!4 &2014592247

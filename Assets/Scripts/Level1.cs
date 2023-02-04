@@ -5,7 +5,7 @@ using UnityEngine;
 public class Level1 : MonoBehaviour
 {
 
-    public float enemiesToSpawn = 3;
+    public float enemiesToSpawn;
     //private float progress = 0;
     public GameObject enemyPrefab;
     private float side = 1;
