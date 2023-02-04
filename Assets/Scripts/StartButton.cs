@@ -8,7 +8,7 @@ public class StartButton : MonoBehaviour
 {
     public void OnButtonPress()
     {
-        SceneManager.LoadScene("Fiona_prototype");
+        SceneManager.LoadScene("Mal_prototype");
         Debug.Log("Button clicked");
     }
 }
