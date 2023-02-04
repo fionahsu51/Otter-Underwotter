@@ -7,9 +7,14 @@ public class Health : MonoBehaviour
 {
 
     public float health;
+    public GameObject bubble;
     // Update is called once per frame
     void Update()
     {
+
+        bubble = GameObject.Find("bubble");
+        bubble.transform.localScale = new Vector3(health/100 * 0.3128754f, health/100 * 0.3128754f, 0.3128754f);
+
         if(health == 0){
             Debug.Log("health 0");
 
