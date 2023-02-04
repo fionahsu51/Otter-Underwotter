@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
     void Update()
     {
         if(health == 0){
+            Debug.Log("health 0");
+
             SceneManager.LoadScene("Game_Over");
         }
     }
