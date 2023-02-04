@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 1921938316}
   - component: {fileID: 1921938315}
   - component: {fileID: 1921938314}
+  - component: {fileID: 1921938320}
   m_Layer: 0
   m_Name: Otter
   m_TagString: Untagged
@@ -954,6 +955,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1921938320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921938313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24dde9fbd0e27014c89d919a02e57bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1001 &1638874249834665535
 PrefabInstance:
   m_ObjectHideFlags: 0
