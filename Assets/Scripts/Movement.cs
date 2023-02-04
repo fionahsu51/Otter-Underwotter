@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     Vector3 newPosition;
     public float speed;
     public float health;
+    bool mouseHover = false;
 
     void Start()
     {
@@ -18,14 +19,30 @@ public class Movement : MonoBehaviour
     void Update()
     {
         faceMouse();
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && mouseHover == false)
         {
-            dash();
+            OnMouseExit();
         }
 
-        if(health == 0){
+        if (health == 0)
+        {
             SceneManager.LoadScene("Title_Screen");
         }
+    }
+
+    void OnMouseOver()
+    {
+        //If your mouse hovers over the GameObject with the script attached, output this message
+        mouseHover = true;
+        Debug.Log("Mouse is over GameObject.");
+    }
+
+    void OnMouseExit()
+    {
+        //The mouse is no longer hovering over the GameObject so output this message each frame
+        mouseHover = false;
+        dash();
+        Debug.Log("Mouse is no longer on GameObject.");
     }
 
     void faceMouse()
@@ -43,16 +60,13 @@ public class Movement : MonoBehaviour
         transform.position += transform.up * Time.deltaTime * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D collision){
-
+    void OnTriggerEnter2D(Collider2D collision)
+    {
         Debug.Log("collision between player and enemy");
-        
         Enemy enemy = collision.GetComponent<Enemy>();
-
-        if(enemy != null){
+        if (enemy != null)
+        {
             health -= 10;
         }
-        
-
     }
 }
