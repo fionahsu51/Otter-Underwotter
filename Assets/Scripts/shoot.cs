@@ -17,7 +17,9 @@ public class shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Mouse.current.rightButton.wasPressedThisFrame)
+        bool input = Input.GetKeyDown("space");
+        //bool input = Mouse.current.rightButton.wasPressedThisFrame;
+        if(input)
         {
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         }

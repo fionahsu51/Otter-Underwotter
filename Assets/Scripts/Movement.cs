@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
     Vector3 newPosition;
     public float speed;
     bool mouseHover = false;
+    private float lerpVal = 0f;
+    private float accelerationSpeed = 0.11f;
 
     void Start()
     {
@@ -14,12 +16,16 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         faceMouse();
         if (Input.GetMouseButton(0) && mouseHover == false)
         {
             OnMouseExit();
+        }
+        else
+        {
+            lerpVal = 0f;
         }
     }
 
@@ -45,11 +51,13 @@ public class Movement : MonoBehaviour
 
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
         transform.up = direction;
+
+        if (lerpVal <= 1f) lerpVal += accelerationSpeed;
     }
 
     void dash()
     {
         //Debug.Log("dash");
-        transform.position += transform.up * Time.deltaTime * speed;
+        transform.position += (transform.up * Time.deltaTime * speed) * lerpVal;
     }
 }
