@@ -37,7 +37,7 @@ public class Level1 : MonoBehaviour
     IEnumerator DoCheck() {
         for(;;) {
             if(enemiesToSpawn > 0){
-                Debug.Log(enemiesToSpawn);
+                //Debug.Log(enemiesToSpawn);
                 makeEnemy(0, 9 * side, Random.Range(-4.5f, 4.5f));
                 side *= -1;
                 enemiesToSpawn--;

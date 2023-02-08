@@ -18,8 +18,8 @@ public class shoot : MonoBehaviour
     void Update()
     {
         bool input = Input.GetKeyDown("space");
-        //bool input = Mouse.current.rightButton.wasPressedThisFrame;
-        if(input)
+        bool input2 = Mouse.current.rightButton.wasPressedThisFrame;
+        if(input || input2)
         {
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         }
