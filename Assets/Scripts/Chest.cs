@@ -5,6 +5,8 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
 
+
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         //Check for a match with the specified name on any GameObject that collides with your GameObject

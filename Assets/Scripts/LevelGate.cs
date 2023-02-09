@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelGate : MonoBehaviour
 {
-    public bool activated = false;
+    public bool activated;
     // Start is called before the first frame update
     void Start()
     {
+        activated = false;
         
     }
 
