@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game_Over.unity
     guid: 903f399c2bbeb1a49bb6ecdb19c8b9de
+  - enabled: 1
+    path: Assets/Scenes/Level2_Twilight.unity
+    guid: 6a5667c1b9b184f4f89d2d705ddf18e9
   m_configObjects: {}
