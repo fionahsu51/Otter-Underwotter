@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class LevelGate : MonoBehaviour
 {
     public bool activated = false;
-    public string test = "TESTETSETESTST";
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +29,7 @@ void OnCollisionEnter2D(Collision2D collision)
             else if (now == "Level2_Twilight") next = "Level3_Midnight";
             else if (now == "Level3_Midnight") next = "Level4_Abyss";
             else if (now == "Level4_Abyss") next = "Level5_Trench";
+            else if (now == "Level5_Trench") next = "Title_Screen";
 
             //print("LEVELGATE COLLISION DETECTED");
             SceneManager.LoadScene(next, LoadSceneMode.Single);

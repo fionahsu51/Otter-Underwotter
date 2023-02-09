@@ -12,6 +12,7 @@ public class Chest : MonoBehaviour
         {
             Debug.Log("Collision detected");
             GameObject levelgate = GameObject.Find("LevelGate");
+            print(levelgate);
             if (levelgate != null) {
                 LevelGate script;
                 script = levelgate.GetComponent<LevelGate>();

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2787846753244238196}
   - component: {fileID: 2787846753244238203}
   m_Layer: 1
-  m_Name: Levelgate
+  m_Name: LevelGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
