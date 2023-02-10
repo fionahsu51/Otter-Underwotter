@@ -24,8 +24,7 @@ public class Level1 : MonoBehaviour
         if(enemiesToSpawn == 0 && cleared == false){
             if (GameObject.FindWithTag("Enemy") == null) {
                 cleared = true;
-                Debug.Log("level done");
-                Vector3 pos = new Vector3(0, -4, 0);
+                Vector3 pos = new Vector3(0, 2.5f, 0);
                 Instantiate(chestPrefab, pos, Quaternion.identity);
             }
         }
@@ -37,7 +36,7 @@ public class Level1 : MonoBehaviour
     IEnumerator DoCheck() {
         for(;;) {
             if(enemiesToSpawn > 0){
-                Debug.Log(enemiesToSpawn);
+                //Debug.Log(enemiesToSpawn);
                 makeEnemy(0, 9 * side, Random.Range(-4.5f, 4.5f));
                 side *= -1;
                 enemiesToSpawn--;

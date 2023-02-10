@@ -7,19 +7,30 @@ public class shoot : MonoBehaviour
 {
     public Transform shootingPoint;
     public GameObject bulletPrefab;
+    public float pressedSpace;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        pressedSpace = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Mouse.current.rightButton.wasPressedThisFrame)
+        bool input = Input.GetKeyDown("space");
+        bool input2 = Mouse.current.rightButton.wasPressedThisFrame;
+        if(input2)
         {
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         }
+
+        if (input) 
+        {
+            pressedSpace = 2f;
+        }
+        if (pressedSpace > 0) pressedSpace -= 0.1f;
     }
+
+
 }
