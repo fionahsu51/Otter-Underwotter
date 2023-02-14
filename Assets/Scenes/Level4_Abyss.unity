@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesToSpawn: 1
-  enemyPrefab: {fileID: 1638874248220091298, guid: 613b669d741a2d64ebf2a3e12c1bde0e, type: 3}
+  enemyPrefab: {fileID: 353140936140571131, guid: 9f09d1d5c7dbcdd4ba42f91b62ad9c30, type: 3}
   chestPrefab: {fileID: 1417188854212725375, guid: cb6bc9e3ace831246880c4d8fd9e111e, type: 3}
 --- !u!4 &470136091
 Transform:
@@ -788,6 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 565287157}
   bulletPrefab: {fileID: 6491261112853591216, guid: 2a9db9cc34b14e946a52a0ec026a3662, type: 3}
+  pressedSpace: 0
 --- !u!114 &1132688946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,6 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 11
+  turnRate: 0
 --- !u!50 &1132688947
 Rigidbody2D:
   serializedVersion: 4
