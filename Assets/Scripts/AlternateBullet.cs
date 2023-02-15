@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class AlternateBullet : MonoBehaviour
 {
     public float speed;
     public float damage;
@@ -13,10 +13,7 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * speed;
-    }
-
-    void OnBecameInvisible() {
-        Destroy(gameObject);
+        Destroy(gameObject, 0.5f); // Destroy bullet after 0.5 seconds
     }
 
     void OnTriggerEnter2D(Collider2D collision){
@@ -26,6 +23,7 @@ public class Bullet : MonoBehaviour
         if(enemy != null){
             enemy.takeDamage(damage);
             Destroy(gameObject);
-        }    
+        }
+        
     }
 }

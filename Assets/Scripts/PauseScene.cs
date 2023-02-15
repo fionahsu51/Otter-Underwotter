@@ -8,6 +8,7 @@ public class PauseScene : MonoBehaviour
     public GameObject noButton;
     public GameObject quitQ;
     public GameObject pauseBackground;
+    public GameObject weaponDisplay;
     bool paused = false;
 
     void Start()
@@ -29,6 +30,7 @@ public class PauseScene : MonoBehaviour
             yesButton.SetActive(true);
             noButton.SetActive(true);
             quitQ.SetActive(true);
+            weaponDisplay.SetActive(false);
             paused = true;
             Debug.Log("Escape key was pressed");
         }
@@ -41,6 +43,7 @@ public class PauseScene : MonoBehaviour
             yesButton.SetActive(false);
             noButton.SetActive(false);
             quitQ.SetActive(false);
+            weaponDisplay.SetActive(true);
             paused = false;
             Debug.Log("Escape key was pressed!");
         }
@@ -59,6 +62,7 @@ public class PauseScene : MonoBehaviour
             yesButton.SetActive(false);
             noButton.SetActive(false);
             quitQ.SetActive(false);
+            weaponDisplay.SetActive(true);
             paused = false;
             Debug.Log("N key was pressed!");
         }
