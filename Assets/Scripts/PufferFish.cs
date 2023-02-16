@@ -6,14 +6,26 @@ public class PufferFish : Enemy
 {
     float startup;
     float turnRate;
+    float originalTurnRate;
     SpriteRenderer renderer;
+    float inflateDistance;
+    bool inflated;
+    public Sprite inflatedSprite;
+    private float originalSpeed;
+    private BoxCollider2D collider;
     // Start is called before the first frame update
     void Start()
     {
-        startup = 0;
-        turnRate = 150f;
-        renderer = GetComponent<SpriteRenderer>();
+        this.startup = 0;
+        this.turnRate = 150f;
+        this.originalTurnRate = this.turnRate;
+        this.renderer = GetComponent<SpriteRenderer>();
         this.speed = 2f;
+        this.originalSpeed = this.speed;
+        this.inflateDistance = 5f;
+        this.inflated = false;
+        this.collider = GetComponent<BoxCollider2D>();
+
     }
 
     // Update is called once per frame
@@ -28,6 +40,7 @@ public class PufferFish : Enemy
         if(health == 0){
             die();
         }
+
     }
 
     public override void move(){
@@ -57,7 +70,37 @@ public class PufferFish : Enemy
             renderer.flipY = true;
         } else renderer.flipY = false;
 
+        //move towards otter at a rate of speed variable
         transform.Translate(Vector3.left*speed*Time.deltaTime);
+        
+        
+        // if close enough, inflate.
+        // controlled by this.inflated bool variable
+        if (!this.inflated) {
+            float dist = Vector3.Distance(otter.transform.position, transform.position);
+            if (dist < this.inflateDistance) {
+                this.renderer.sprite = inflatedSprite;
+                this.speed = 0f;
+                this.turnRate = 0f;
+                this.inflated = true;
+                // increase BoxCollider2D size to scale with new sprite
+                float scaleIncrease = 2.4f;
+                collider.size = new Vector2(collider.size.x * scaleIncrease, collider.size.y * scaleIncrease);
+            }
+        } else {
+            //now lerp movement speed and turn rate to a rate that's a bit below uninflated speeds
+            float moveLerpRate = 0.3f;
+            float inflatedSpeed = originalSpeed * 0.4f;
+            float turnLerpRate = 20f;
+            float inflatedTurnRate = originalTurnRate * 0.7f;
+            if (speed < inflatedSpeed) {
+                speed += moveLerpRate * Time.deltaTime;
+            }
+            if (this.turnRate < inflatedTurnRate) {
+                this.turnRate += turnLerpRate * Time.deltaTime;
+            }
+        }
+        
 
     }
 }
