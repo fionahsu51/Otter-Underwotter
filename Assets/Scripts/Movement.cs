@@ -10,6 +10,9 @@ public class Movement : MonoBehaviour
     private float lerpVal = 0f;
     private float accelerationSpeed = 0.11f;
     public float turnRate;
+    private bool moving = false;
+    public Animator animator;
+    public SpriteRenderer sprite;
 
     void Start()
     {
@@ -19,14 +22,19 @@ public class Movement : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {
+    {    
+        animator.SetBool("moving", moving);
         faceMouse();
         if (Input.GetMouseButton(0) && mouseHover == false)
         {
+            if(!moving){
+                moving = true;
+            }
             OnMouseExit();
         }
         else
         {
+            moving = false;
             lerpVal = 0f;
         }
     }
@@ -72,6 +80,14 @@ public class Movement : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, turnRate * Time.deltaTime);
 
         if (lerpVal <= 1f) lerpVal += accelerationSpeed;
+
+        if((angle > 90f && angle < 180f) || (angle < -90f && angle > -180f)){
+            sprite.flipX = true;
+            
+        }else{
+            sprite.flipX = false;
+        }
+
     }
 
     void dash()
