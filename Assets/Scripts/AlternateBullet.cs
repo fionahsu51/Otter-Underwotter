@@ -23,7 +23,6 @@ public class AlternateBullet : MonoBehaviour
         if(enemy != null){
             enemy.takeDamage(damage);
             Destroy(gameObject);
-        }
-        
+        }   
     }
 }
