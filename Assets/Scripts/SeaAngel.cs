@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SeaAngel : Enemy
 {
-    private Vector3 dir = Vector3.left;
     float distance;
     bool startMoving;
 

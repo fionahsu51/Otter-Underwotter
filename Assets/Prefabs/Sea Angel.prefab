@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 915532151345673147}
   - component: {fileID: 915532151345673151}
   m_Layer: 0
-  m_Name: Sea Angel 1
+  m_Name: Sea Angel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
