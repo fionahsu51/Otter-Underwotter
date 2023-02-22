@@ -80,7 +80,8 @@ public class PufferFish : Enemy
         if (!this.inflated) {
             float dist = Vector3.Distance(otter.transform.position, transform.position);
             if (dist < this.inflateDistance) {
-                transform.localScale = new Vector3(transform.localScale.x*this.scaleIncrease, transform.localScale.y*this.scaleIncrease, 0f);
+                //transform.localScale = new Vector3(transform.localScale.x*this.scaleIncrease, transform.localScale.y*this.scaleIncrease, 0f);
+                this.renderer.sprite = inflatedSprite;
                 this.speed = 0f;
                 this.turnRate = 0f;
                 this.inflated = true;
