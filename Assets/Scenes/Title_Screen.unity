@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79270bcbb3ec81469a56b1c625c0d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubblePop: {fileID: 2014608332}
 --- !u!4 &1457859313
 Transform:
   m_ObjectHideFlags: 0
@@ -752,7 +753,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e4e9a62ff86eb674881dfe791c8fd256, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

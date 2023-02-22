@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
+    public AudioSource bubblePop;
     public void OnButtonPress()
     {
-        SceneManager.LoadScene("Mal_prototype");
+        SceneManager.LoadScene("New_Fiona");
         Debug.Log("Button clicked");
+        bubblePop.Play();
     }
 }
