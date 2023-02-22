@@ -13,6 +13,7 @@ public class PufferFish : Enemy
     public Sprite inflatedSprite;
     private float originalSpeed;
     private BoxCollider2D collider;
+    public float scaleIncrease;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class PufferFish : Enemy
         this.inflateDistance = 5f;
         this.inflated = false;
         this.collider = GetComponent<BoxCollider2D>();
+        this.scaleIncrease = 2.5f;
 
     }
 
@@ -73,19 +75,17 @@ public class PufferFish : Enemy
         //move towards otter at a rate of speed variable
         transform.Translate(Vector3.left*speed*Time.deltaTime);
         
-        
         // if close enough, inflate.
         // controlled by this.inflated bool variable
         if (!this.inflated) {
             float dist = Vector3.Distance(otter.transform.position, transform.position);
             if (dist < this.inflateDistance) {
-                this.renderer.sprite = inflatedSprite;
+                transform.localScale = new Vector3(transform.localScale.x*this.scaleIncrease, transform.localScale.y*this.scaleIncrease, 0f);
                 this.speed = 0f;
                 this.turnRate = 0f;
                 this.inflated = true;
                 // increase BoxCollider2D size to scale with new sprite
-                float scaleIncrease = 2.4f;
-                collider.size = new Vector2(collider.size.x * scaleIncrease, collider.size.y * scaleIncrease);
+                collider.size = new Vector2(collider.size.x * this.scaleIncrease, collider.size.y * this.scaleIncrease);
             }
         } else {
             //now lerp movement speed and turn rate to a rate that's a bit below uninflated speeds

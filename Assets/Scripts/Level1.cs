@@ -5,9 +5,12 @@ using UnityEngine;
 public class Level1 : MonoBehaviour
 {
 
+    //With help from this video. Thank you Code Monkey!
+    //https://www.youtube.com/watch?v=gbFBWxtpgpQ
+
     public float enemiesToSpawn;
     //private float progress = 0;
-    public GameObject enemyPrefab;
+    public Enemy[] enemyArray;
     private float side = 1;
     private bool cleared = false;
     public GameObject chestPrefab;
@@ -34,19 +37,24 @@ public class Level1 : MonoBehaviour
     // Adapted from here, thank you marchall_box!
     // https://answers.unity.com/questions/17131/execute-code-every-x-seconds-with-update.html
     IEnumerator DoCheck() {
-        for(;;) {
-            if(enemiesToSpawn > 0){
-                //Debug.Log(enemiesToSpawn);
-                makeEnemy(0, 9 * side, Random.Range(-4.5f, 4.5f));
-                side *= -1;
-                enemiesToSpawn--;
+        foreach(Enemy enemy in enemyArray) {
+            //Debug.Log(enemiesToSpawn);
+            if(enemy.name == "PufferFish"){
+                Vector3 pos = new Vector3(9*side, Random.Range(-4.5f, 4.5f), 0);
+                Instantiate(enemy, pos, Quaternion.identity);
+            }else if(enemy.name == "Sea Angel"){
+                Vector3 pos = new Vector3(Random.Range(-5.5f, 5.5f), -4.5f, 0);
+                Instantiate(enemy, pos, Quaternion.identity);
+            }else if(enemy.name == "werewolfEel"){
+                Vector3 pos = new Vector3(9*side, Random.Range(-4.5f, 4.5f), 0);
+                Instantiate(enemy, pos, Quaternion.identity);
+            }else{
+
             }
+            
+            side *= -1;
+            enemiesToSpawn--;
             yield return new WaitForSeconds(1.0f);
         }   
-    }
-
-    void makeEnemy(float type, float x, float y){
-        Vector3 pos = new Vector3(x, y, 0);
-        Instantiate(enemyPrefab, pos, Quaternion.identity);
     }
 }
