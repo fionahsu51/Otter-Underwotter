@@ -13,7 +13,7 @@ public class AlternateBullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * speed;
-        Destroy(gameObject, 0.5f); // Destroy bullet after 0.5 seconds
+        Destroy(gameObject, 0.2f); // Destroy bullet after 0.5 seconds
     }
 
     void OnTriggerEnter2D(Collider2D collision){

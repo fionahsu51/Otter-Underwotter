@@ -915,6 +915,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1213984615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213984616}
+  m_Layer: 0
+  m_Name: Shooting Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1213984616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213984615}
+  m_LocalRotation: {x: 0.0006044423, y: -0.000015495469, z: 0.9999997, w: -0.0005188669}
+  m_LocalPosition: {x: -0.37, y: 1.33, z: -0}
+  m_LocalScale: {x: 0.42400068, y: 0.4062956, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1453901483}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1453901483 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5009535751057048254, guid: da7772a13c1e24d49b37380862cb2b9a, type: 3}
+  m_PrefabInstance: {fileID: 5009535750227521841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1755216242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Otter
       objectReference: {fileID: 0}
+    - target: {fileID: 5009535751057048251, guid: da7772a13c1e24d49b37380862cb2b9a, type: 3}
+      propertyPath: shootingPoint
+      value: 
+      objectReference: {fileID: 1213984616}
     - target: {fileID: 5009535751057048254, guid: da7772a13c1e24d49b37380862cb2b9a, type: 3}
       propertyPath: m_RootOrder
       value: 4

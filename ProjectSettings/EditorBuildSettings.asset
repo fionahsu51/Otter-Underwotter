@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Title_Screen.unity
     guid: 8391e388a27933a4090136eab17d3666
   - enabled: 1
-    path: Assets/Scenes/Mal_prototype.unity
+    path: Assets/Scenes/New_Fiona.unity
     guid: 401ffaa96fb59234a9d83afce4755cf5
   - enabled: 1
     path: Assets/Scenes/Fiona_prototype.unity
