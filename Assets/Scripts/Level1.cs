@@ -43,7 +43,10 @@ public class Level1 : MonoBehaviour
                 Vector3 pos = new Vector3(9*side, Random.Range(-4.5f, 4.5f), 0);
                 Instantiate(enemy, pos, Quaternion.identity);
             }else if(enemy.name == "Sea Angel"){
-                Vector3 pos = new Vector3(Random.Range(-2.5f, 2.5f), -4.5f, 0);
+                Vector3 pos = new Vector3(Random.Range(-5.5f, 5.5f), -4.5f, 0);
+                Instantiate(enemy, pos, Quaternion.identity);
+            }else if(enemy.name == "werewolfEel"){
+                Vector3 pos = new Vector3(9*side, Random.Range(-4.5f, 4.5f), 0);
                 Instantiate(enemy, pos, Quaternion.identity);
             }else{
 

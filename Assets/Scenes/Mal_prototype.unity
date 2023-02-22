@@ -1259,6 +1259,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
+    - target: {fileID: 9157415978031425102, guid: 7fc2bd1ecf9d3f44081f8a8f1f5bfe63, type: 3}
+      propertyPath: enemyArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157415978031425102, guid: 7fc2bd1ecf9d3f44081f8a8f1f5bfe63, type: 3}
+      propertyPath: enemyArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 2560825365206917857, guid: 651bada9cc05f99409ebf37cd659145d, type: 3}
+    - target: {fileID: 9157415978031425102, guid: 7fc2bd1ecf9d3f44081f8a8f1f5bfe63, type: 3}
+      propertyPath: enemyArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 2560825365206917857, guid: 651bada9cc05f99409ebf37cd659145d, type: 3}
     - target: {fileID: 9157415978031425103, guid: 7fc2bd1ecf9d3f44081f8a8f1f5bfe63, type: 3}
       propertyPath: m_RootOrder
       value: 6
