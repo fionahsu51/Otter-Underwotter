@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 5009535751057048254}
   - component: {fileID: 5009535751057048255}
   - component: {fileID: 5009535751057048253}
-  - component: {fileID: 5009535751057048250}
   - component: {fileID: 5009535751057048251}
   - component: {fileID: 5009535751057048225}
   - component: {fileID: 5009535751057048227}
   - component: {fileID: 5009535751057048226}
+  - component: {fileID: 5344647858844397414}
   m_Layer: 0
-  m_Name: Otter
+  m_Name: Otter ScrollTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,22 +111,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &5009535751057048250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5009535751057048248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a55cbef73b49ac478be98862da7adee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 7
-  turnRate: 0
-  animator: {fileID: 5009535751057048227}
-  sprite: {fileID: 5009535751057048255}
 --- !u!114 &5009535751057048251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,3 +176,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.64, y: 2.36}
   m_Direction: 0
+--- !u!114 &5344647858844397414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009535751057048248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943e0a67831302240b8cd669f32cc15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  turnRate: 0
+  animator: {fileID: 5009535751057048227}
+  sprite: {fileID: 5009535751057048255}
