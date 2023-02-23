@@ -9,9 +9,9 @@ public class Scroller : MonoBehaviour
     public GameObject otter;
     public SpriteRenderer bg1;
     public SpriteRenderer bg2;
-    public Sprite sun;
-    public Sprite trans;
-    public Sprite midnight;
+    public Sprite sunSprite;
+    public Sprite transMidSprite;
+    public Sprite midnightSprite;
     private float depth;
 
     private float time;
@@ -21,6 +21,9 @@ public class Scroller : MonoBehaviour
     private float offset;
     private float start;
 
+    public int sunlightBound;
+    public int midnightBound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,12 @@ public class Scroller : MonoBehaviour
         section = 0;
         //bg1.transform.position = new Vector3(bg1.transform.position.x, -bg1.bounds.size.y/2f, 0f)
         start = bg1.transform.position.y/2f;
+
+        sunlightBound = 4;
+        midnightBound = 10;
+
+        //bg1.sprite = midnightSprite;
+        
     }
 
     // Update is called once per frame
@@ -58,7 +67,7 @@ public class Scroller : MonoBehaviour
 
         //first, detect if otter is in upper half or lower half
         section = Math.Abs( (int)( (otter.transform.position.y - halfLength) / (occupying.bounds.size.y) ) );
-        float currentTop = (-section * occupying.bounds.size.y) + halfLength;
+        float currentTop = (- section * occupying.bounds.size.y) + halfLength;
         string half = "";
         if (otter.transform.position.y >= currentTop - halfLength) {
             half = "upper";
@@ -71,7 +80,29 @@ public class Scroller : MonoBehaviour
             other.transform.position = new Vector3(0f, occupying.transform.position.y - occupying.bounds.size.y, 0f);
         }
 
+        //next make sure bg1 and bg2 have the right background depending on what depth we're at
+        //first, take care of occupied background
+        if (section < sunlightBound) {
+            occupying.sprite = sunSprite;
+        } else if (section == sunlightBound) {
+            occupying.sprite = transMidSprite;
+        } else if (section > sunlightBound) {  //&& section < midnightBound
+            occupying.sprite = midnightSprite;
+        }
 
+        
+        //now take care of other background
+        if (section == sunlightBound - 1 && half == "lower") {
+            other.sprite = transMidSprite;
+        } else if (section == sunlightBound && half == "upper") {
+            other.sprite = sunSprite;
+        } else if (section == sunlightBound && half == "lower") {
+            other.sprite = midnightSprite;
+        } else if (section == sunlightBound + 1 && half == "upper") {
+            other.sprite = transMidSprite;
+        } else if (section == sunlightBound + 1 && half == "lower") {
+            other.sprite = midnightSprite;
+        }
 
    }
 }

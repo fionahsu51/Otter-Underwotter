@@ -1473,9 +1473,11 @@ MonoBehaviour:
   otter: {fileID: 1121951100}
   bg1: {fileID: 567239121}
   bg2: {fileID: 665989929}
-  sun: {fileID: 21300000, guid: 52393ba0ffefcd147a6badce4d57866a, type: 3}
-  trans: {fileID: 21300000, guid: d1a3f3136beb2ad41b0c8475b69c6b31, type: 3}
-  midnight: {fileID: 21300000, guid: 797654cdabc822743838d560bb6cc389, type: 3}
+  sunSprite: {fileID: 21300000, guid: 52393ba0ffefcd147a6badce4d57866a, type: 3}
+  transMidSprite: {fileID: 21300000, guid: d1a3f3136beb2ad41b0c8475b69c6b31, type: 3}
+  midnightSprite: {fileID: 21300000, guid: 797654cdabc822743838d560bb6cc389, type: 3}
+  sunlightBound: 0
+  midnightBound: 0
 --- !u!212 &1235369704
 SpriteRenderer:
   m_ObjectHideFlags: 0
