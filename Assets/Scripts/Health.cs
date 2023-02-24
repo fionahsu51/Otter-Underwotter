@@ -12,8 +12,8 @@ public class Health : MonoBehaviour
     void Update()
     {
 
-        bubble = GameObject.Find("bubble");
-        bubble.transform.localScale = new Vector3(health/100 * 0.3128754f, health/100 * 0.3128754f, 0.3128754f);
+        //bubble = GameObject.Find("Bubble Health");
+        bubble.transform.localScale = new Vector3(health/100 * 0.9128754f, health/100 * 0.9128754f, 0.9128754f);
 
         if(health == 0){
             Debug.Log("health 0");

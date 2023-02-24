@@ -557,6 +557,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79270bcbb3ec81469a56b1c625c0d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: c6a9e06dc32ec564d85bc4eeba8337bd, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
   bubblePop: {fileID: 2014608332}
 --- !u!4 &1457859313
 Transform:

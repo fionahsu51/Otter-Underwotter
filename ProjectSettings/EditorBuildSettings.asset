@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level5_Trench.unity
     guid: dc6ee2af6d76f354da0a2b2575fd5df6
+  - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: 6bc827f74c632fe47a80ebb45f3dda59
   m_configObjects: {}
