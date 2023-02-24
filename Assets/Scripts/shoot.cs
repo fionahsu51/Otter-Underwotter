@@ -19,8 +19,8 @@ public class shoot : MonoBehaviour
     void Update()
     {
         bool input = Input.GetKeyDown("space");
-        bool input2 = Mouse.current.rightButton.wasPressedThisFrame;
-        if(input2)
+        //bool input2 = Keyboard.current.zButton.wasPressedThisFrame;
+        if(Input.GetKeyDown(KeyCode.X))
         {
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         }
