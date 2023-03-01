@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     private bool moving = false;
     public Animator animator;
     public SpriteRenderer sprite;
+    public AudioSource kickoffAudio;
+    public AudioSource swimmingAudio;
 
     void Start()
     {
@@ -27,13 +29,22 @@ public class Movement : MonoBehaviour
         faceMouse();
         if (Input.GetMouseButton(0) && mouseHover == false)
         {
-            if(!moving){
+            
+            if (!moving){
                 moving = true;
+                kickoffAudio.Play();
             }
+            if(!swimmingAudio.isPlaying)
+            {
+                StartCoroutine("Swimming");
+                //swimmingAudio.Play();
+            }
+            
             OnMouseExit();
         }
         else
         {
+            swimmingAudio.Pause();
             moving = false;
             lerpVal = 0f;
         }
@@ -93,5 +104,12 @@ public class Movement : MonoBehaviour
     void dash()
     {
         transform.position += (transform.up * Time.deltaTime * speed) * lerpVal;
+    }
+
+    //Coroutine so there is enough time for the kickoff SFX to play before playing the actual swimming SFX
+    IEnumerator Swimming()
+    {
+        yield return new WaitForSeconds(0.5f);
+        swimmingAudio.Play();
     }
 }

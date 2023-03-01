@@ -39,7 +39,7 @@ public class PufferFish : Enemy
 
         move();
 
-        if(health == 0){
+        if(health <= 0){
             die();
         }
 

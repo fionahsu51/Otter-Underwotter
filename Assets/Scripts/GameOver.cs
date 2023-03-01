@@ -10,7 +10,7 @@ public class GameOver : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            SceneManager.LoadScene("Fiona_prototype");
+            SceneManager.LoadScene("New_Fiona");
         }
 
         else if (Input.GetKeyDown(KeyCode.N))
