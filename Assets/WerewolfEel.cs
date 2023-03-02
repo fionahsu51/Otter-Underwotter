@@ -25,7 +25,7 @@ public class WerewolfEel : Enemy
             speed = 0;
         }
 
-        if(health == 0){
+        if(health <= 0){
             die();
         }
     }
