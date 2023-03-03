@@ -6,43 +6,20 @@ public class Chest : MonoBehaviour
 {
 
     private bool input;
+    private float openRange = 2f;
+    private bool opened = false;
 
     void Update() 
     {
-        input = Input.GetKeyDown("space");
-    }
-
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Check for a match with the specified name on any GameObject that collides with your GameObject
-        /*if (collision.gameObject.name == "Otter")
+        input = Input.GetKeyDown("c");
+        GameObject otter = GameObject.Find("Otter");
+        float dist = Vector3. Distance(otter.transform.position, transform.position);
+        if(dist <= openRange && Input.GetKeyDown(KeyCode.C) && opened == false)
         {
-            Debug.Log("Collision detected");
-            GameObject levelgate = GameObject.Find("LevelGate");
-            print(levelgate);
-            if (levelgate != null) {
-                LevelGate script;
-                script = levelgate.GetComponent<LevelGate>();
-                script.activated = true;
-                Destroy(gameObject);
-            }
-            //print(levelgate.activated);
-        }*/
-    }
-
-    void OnTriggerStay2D(Collider2D collision) 
-    {
-
-        if (collision.gameObject.name == "Otter" && collision.GetComponent<shoot>().pressedSpace > 0f)
-        {
-            GameObject levelgate = GameObject.Find("LevelGate");
-            if (levelgate != null) {
-                LevelGate script;
-                script = levelgate.GetComponent<LevelGate>();
-                script.activated = true;
-                Destroy(gameObject);
-            }
+            Debug.Log("opened chest");
+            opened = true;
+            
         }
     }
+
 }
