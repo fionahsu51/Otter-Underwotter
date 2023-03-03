@@ -20,7 +20,7 @@ public class shoot : MonoBehaviour
     {
         bool input = Input.GetKeyDown("space");
         //bool input2 = Keyboard.current.zButton.wasPressedThisFrame;
-        if(Input.GetKeyDown(KeyCode.X))
+        if(Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0)
         {
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         }

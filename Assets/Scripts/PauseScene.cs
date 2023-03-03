@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseScene : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PauseScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
+        if (Input.GetKeyDown(KeyCode.P) && paused == false)
         {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.Locked;
@@ -35,7 +36,7 @@ public class PauseScene : MonoBehaviour
             Debug.Log("Escape key was pressed");
         }
 
-        else if (Input.GetKeyDown(KeyCode.Escape) && paused == true)
+        else if (Input.GetKeyDown(KeyCode.P) && paused == true)
         {
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.None;
@@ -51,7 +52,7 @@ public class PauseScene : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Y) && paused == true)
         {
             Debug.Log("Y key was pressed!");
-            Application.Quit();
+            SceneManager.LoadScene("Title_Screen");
         }
 
         else if (Input.GetKeyDown(KeyCode.N) && paused == true)
