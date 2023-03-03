@@ -13,6 +13,7 @@ public class StartButton : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode); 
     }
 

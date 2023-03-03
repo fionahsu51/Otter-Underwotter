@@ -28,7 +28,7 @@ public class Level1 : MonoBehaviour
             if (GameObject.FindWithTag("Enemy") == null) {
                 cleared = true;
                 Vector3 pos = new Vector3(0, 2.5f, 0);
-                Instantiate(chestPrefab, pos, Quaternion.identity);
+                //Instantiate(chestPrefab, pos, Quaternion.identity);
             }
         }
 
