@@ -2218,7 +2218,6 @@ GameObject:
   - component: {fileID: 1495470031}
   - component: {fileID: 1495470035}
   - component: {fileID: 1495470037}
-  - component: {fileID: 1495470038}
   m_Layer: 0
   m_Name: Otter
   m_TagString: Untagged
@@ -2347,20 +2346,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 9
   turnRate: 0
---- !u!114 &1495470038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495470030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24dde9fbd0e27014c89d919a02e57bda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  bubble: {fileID: 0}
+  animator: {fileID: 0}
+  sprite: {fileID: 0}
+  kickoffAudio: {fileID: 0}
+  swimmingAudio: {fileID: 0}
 --- !u!1 &1797723660
 GameObject:
   m_ObjectHideFlags: 0
