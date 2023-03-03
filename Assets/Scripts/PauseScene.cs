@@ -52,6 +52,7 @@ public class PauseScene : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Y) && paused == true)
         {
             Debug.Log("Y key was pressed!");
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("Title_Screen");
         }
 
