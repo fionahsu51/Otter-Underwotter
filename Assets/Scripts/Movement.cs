@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     private float accelerationSpeed = 0.11f;
     public float turnRate;
     private bool moving = false;
+    private bool kickoffPlaying = false;
     public Animator animator;
     public SpriteRenderer sprite;
     public AudioSource kickoffAudio;
@@ -27,12 +28,21 @@ public class Movement : MonoBehaviour
     {    
         animator.SetBool("moving", moving);
         faceMouse();
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!kickoffAudio.isPlaying && kickoffPlaying)
+            {
+                kickoffAudio.Play();
+                kickoffPlaying = false;
+
+            }
+        }
+
         if (Input.GetMouseButton(0) && mouseHover == false)
         {
-            
+
             if (!moving){
                 moving = true;
-                kickoffAudio.Play();
             }
             if(!swimmingAudio.isPlaying)
             {
@@ -60,6 +70,7 @@ public class Movement : MonoBehaviour
     void OnMouseExit()
     {
         //The mouse is no longer hovering over the GameObject so output this message each frame
+        kickoffPlaying = true;
         mouseHover = false;
         dash();
         //Debug.Log("Mouse is no longer on GameObject.");
@@ -109,7 +120,7 @@ public class Movement : MonoBehaviour
     //Coroutine so there is enough time for the kickoff SFX to play before playing the actual swimming SFX
     IEnumerator Swimming()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         swimmingAudio.Play();
     }
 }
