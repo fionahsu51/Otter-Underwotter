@@ -543,15 +543,15 @@ MonoBehaviour:
   otter: {fileID: 829920870}
   bg1: {fileID: 618376714}
   bg2: {fileID: 1286974346}
-  startSprite: {fileID: 21300000, guid: 50f43f66a88154d4ab3e1c8bd27d8383, type: 3}
-  sunSprite: {fileID: 21300000, guid: 6948d33ed0ea8e94a9ce8b3588d800be, type: 3}
-  tranSunTwiSprite: {fileID: 21300000, guid: 59ec441b0aead4b49bef04ec373ee863, type: 3}
-  twiSprite: {fileID: 21300000, guid: 0ecce2d7521dd50468e226d79929bbc0, type: 3}
-  tranTwiMidSprite: {fileID: 21300000, guid: 46e533e2ab1809743aecdf5be4ab4444, type: 3}
-  midSprite: {fileID: 21300000, guid: 6a4ced8646f4951438ff74b4e10d1251, type: 3}
-  tranMidAbSprite: {fileID: 21300000, guid: a2a32f9f4743b0c45945eae08dd79251, type: 3}
-  abSprite: {fileID: 21300000, guid: a8d2127872e4ee1478d7736fb3991718, type: 3}
-  endSprite: {fileID: 21300000, guid: b9f34509497f46748abb797461da9398, type: 3}
+  startSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
+  sunSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
+  tranSunTwiSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
+  twiSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
+  tranTwiMidSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
+  midSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
+  tranMidAbSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
+  abSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
+  endSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
   sunlightLimit: 3
   twilightLimit: 6
   midnightLimit: 9
