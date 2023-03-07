@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title_Screen.unity
     guid: 8391e388a27933a4090136eab17d3666
-  - enabled: 1
-    path: Assets/Scenes/New_Fiona.unity
-    guid: 401ffaa96fb59234a9d83afce4755cf5
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/Fiona_prototype.unity
     guid: 2cda990e2423bbf4892e6590ba056729
@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 6bc827f74c632fe47a80ebb45f3dda59
+  - enabled: 1
+    path: Assets/Scenes/Fiona_Parallax.unity
+    guid: 54d1013c8dff08744937ef4c1386c56d
+  - enabled: 1
+    path: Assets/Scenes/OFFICIAL.unity
+    guid: 88598bd444d73a24ba0c0825042c8569
   m_configObjects: {}
