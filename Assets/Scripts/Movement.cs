@@ -11,11 +11,8 @@ public class Movement : MonoBehaviour
     private float accelerationSpeed = 0.11f;
     public float turnRate;
     private bool moving = false;
-    private bool kickoffPlaying = false;
     public Animator animator;
     public SpriteRenderer sprite;
-    public AudioSource kickoffAudio;
-    public AudioSource swimmingAudio;
 
     void Start()
     {
@@ -25,40 +22,31 @@ public class Movement : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {    
+    {
         animator.SetBool("moving", moving);
         faceMouse();
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (!kickoffAudio.isPlaying && kickoffPlaying)
-            {
-                kickoffAudio.Play();
-                kickoffPlaying = false;
-
-            }
-        }
 
         if (Input.GetMouseButton(0) && mouseHover == false)
         {
 
-            if (!moving){
-                moving = true;
-            }
-            if(!swimmingAudio.isPlaying)
+            if (!moving)
             {
-                StartCoroutine("Swimming");
-                //swimmingAudio.Play();
+                moving = true;
+                //StartCoroutine("Swimming");
             }
-            
+
+
             OnMouseExit();
         }
+
         else
         {
-            swimmingAudio.Pause();
             moving = false;
             lerpVal = 0f;
-        }
+        }    
     }
+
+
 
     void OnMouseOver()
     {
@@ -70,7 +58,6 @@ public class Movement : MonoBehaviour
     void OnMouseExit()
     {
         //The mouse is no longer hovering over the GameObject so output this message each frame
-        kickoffPlaying = true;
         mouseHover = false;
         dash();
         //Debug.Log("Mouse is no longer on GameObject.");
@@ -97,16 +84,19 @@ public class Movement : MonoBehaviour
 
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
-        float angle = Mathf.Atan2 (mousePosition.y - transform.position.y, mousePosition.x-transform.position.x) * Mathf.Rad2Deg;
-        Quaternion qTo = Quaternion.Euler (new Vector3 (0, 0, angle - 90f));
+        float angle = Mathf.Atan2(mousePosition.y - transform.position.y, mousePosition.x - transform.position.x) * Mathf.Rad2Deg;
+        Quaternion qTo = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
         transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, turnRate * Time.deltaTime);
 
         if (lerpVal <= 1f) lerpVal += accelerationSpeed;
 
-        if((angle > 90f && angle < 180f) || (angle < -90f && angle > -180f)){
+        if ((angle > 90f && angle < 180f) || (angle < -90f && angle > -180f))
+        {
             sprite.flipX = true;
-            
-        }else{
+
+        }
+        else
+        {
             sprite.flipX = false;
         }
 
@@ -117,10 +107,5 @@ public class Movement : MonoBehaviour
         transform.position += (transform.up * Time.deltaTime * speed) * lerpVal;
     }
 
-    //Coroutine so there is enough time for the kickoff SFX to play before playing the actual swimming SFX
-    IEnumerator Swimming()
-    {
-        yield return new WaitForSeconds(0.4f);
-        swimmingAudio.Play();
-    }
+
 }

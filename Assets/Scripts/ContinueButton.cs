@@ -18,15 +18,10 @@ public class ContinueButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(mouseHover == true)
-        //{
-        //    darkContinue.SetActive(true);
-        //    darkContinue.SetActive(true);
-        //}
 
         if(Input.GetMouseButton(0) && mouseHover == true)
         {
-            SceneManager.LoadScene("New_Fiona");
+            SceneManager.LoadScene("OFFICIAL");
         }
     }
 

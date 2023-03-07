@@ -21,7 +21,7 @@ public class AlternateShoot : MonoBehaviour
     {
         bool input = Input.GetKeyDown("space");
         ///bool input2 = Mouse.current.rightButton.wasPressedThisFrame;
-        if(Input.GetKeyDown(KeyCode.X))
+        if(Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0)
         {
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
             Instantiate(bulletPrefab, shootingPoint2.position, transform.rotation);
