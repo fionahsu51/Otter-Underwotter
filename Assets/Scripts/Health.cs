@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
         //bubble = GameObject.Find("Bubble Health");
         bubble.transform.localScale = new Vector3(health/100 * 0.9128754f, health/100 * 0.9128754f, 0.9128754f);
 
-        if(health == 0){
+        if(health <= 0){
             Debug.Log("health 0");
 
             SceneManager.LoadScene("Game_Over");
