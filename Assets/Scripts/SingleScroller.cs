@@ -9,14 +9,14 @@ public class SingleScroller : MonoBehaviour
     public GameObject otter;
     public SpriteRenderer bg1;
     public SpriteRenderer bg2;
-    public Sprite startSprite;
+    // public Sprite startSprite;
     public Sprite sunSprite;
     //public Sprite tranSunTwiSprite;
     public Sprite twiSprite;
     //public Sprite tranTwiMidSprite;
-    public Sprite midSprite;
+    public Sprite midAbSprite;
     //public Sprite tranMidAbSprite;
-    public Sprite abSprite;
+    //public Sprite abSprite;
     //public Sprite endSprite;
     private float depth;
 
@@ -41,10 +41,10 @@ public class SingleScroller : MonoBehaviour
         section = 0;
         //bg1.transform.position = new Vector3(bg1.transform.position.x, -bg1.bounds.size.y/2f, 0f)
         start = bg1.transform.position.y/2f;
-        sunlightLimit = 1;
-        twilightLimit = 2;
-        midnightLimit = 3;
-        end = 4;
+        //sunlightLimit = 0;
+        //twilightLimit = 1;
+        //midnightLimit = 2;
+        end = 2;
 
         //teleport the bottom collider to the end scene
         float bottomPos = ((-end-1) * bg1.bounds.size.y);
@@ -60,6 +60,8 @@ public class SingleScroller : MonoBehaviour
         if (time > 1f) {
             time = 0f;
             //Debug.Log(otter.transform.position.y.ToString() + " vs " + bg1.bounds.size.y.ToString());
+            // Debug.Log((bg1.bounds.size.y).ToString() + "  " + (new System.Random()).Next().ToString());
+
         }
         // section holds which section the otter is at.
         section = (int)Math.Abs(otter.transform.position.y/bg1.bounds.size.y); 
@@ -97,34 +99,25 @@ public class SingleScroller : MonoBehaviour
         //next make sure bg1 and bg2 have the right background depending on what depth we're at
         //first, take care of occupied background
         if (section == 0) {
-            occupying.sprite = startSprite;
-        } else if (section == 1) {
             occupying.sprite = sunSprite;
-        } else if (section == 2) {
+        } else if (section == 1) {
             occupying.sprite = twiSprite;
-        } else if (section == 3) {
-            occupying.sprite = midSprite;
-        } else if (section == 4) {
-            occupying.sprite = abSprite;
+        } else if (section == 2) {
+            occupying.sprite = midAbSprite;
         }
 
         // 0 is start
-        // 1 is sunlight
-        // 2 is twilight
-        // 3 is midnight
-        // 4 is abyss
+        // 1 is twilight
+        // 2 is midnight/abyss
 
         if (half == "upper") {
-            if (section == 1) other.sprite = startSprite;
-            else if (section == 2) other.sprite = sunSprite;
-            else if (section == 3) other.sprite = twiSprite;
-            else if (section == 4) other.sprite = midSprite;
+            if (section == 1) other.sprite = sunSprite;
+            else if (section == 2) other.sprite = twiSprite;
+            else if (section == 3) other.sprite = midAbSprite;
         }
         else if (half == "lower") {
-            if (section == 0) other.sprite = sunSprite;
-            else if (section == 1) other.sprite = twiSprite;  
-            else if (section == 2) other.sprite = midSprite;
-            else if (section == 3) other.sprite = abSprite;
+            if (section == 0) other.sprite = twiSprite;
+            else if (section == 1) other.sprite = midAbSprite;
         }
 
 

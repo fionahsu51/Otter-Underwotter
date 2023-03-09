@@ -537,25 +537,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 427700264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7f02259cb478140adf17aa90852cbd, type: 3}
+  m_Script: {fileID: 11500000, guid: f38c89305ea527043b3db81f4b8aead2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   otter: {fileID: 829920870}
   bg1: {fileID: 618376714}
   bg2: {fileID: 1286974346}
-  startSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
-  sunSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
-  tranSunTwiSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
-  twiSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
-  tranTwiMidSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
-  midSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
-  tranMidAbSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
-  abSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
-  endSprite: {fileID: 21300000, guid: cfdc40ff9fa656a4c89d16f7cee153f9, type: 3}
-  sunlightLimit: 3
-  twilightLimit: 6
-  midnightLimit: 9
-  end: 12
+  sunSprite: {fileID: 21300000, guid: 6948d33ed0ea8e94a9ce8b3588d800be, type: 3}
+  twiSprite: {fileID: 21300000, guid: 0ecce2d7521dd50468e226d79929bbc0, type: 3}
+  midAbSprite: {fileID: 21300000, guid: 6a4ced8646f4951438ff74b4e10d1251, type: 3}
   bottom: {fileID: 699369881}
 --- !u!4 &438820961 stripped
 Transform:
