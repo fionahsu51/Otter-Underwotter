@@ -23,7 +23,7 @@ public class PufferFish : Enemy
         this.renderer = GetComponent<SpriteRenderer>();
         this.speed = 2f;
         this.originalSpeed = this.speed;
-        this.inflateDistance = 5f;
+        this.inflateDistance = 2f;
         this.inflated = false;
         this.collider = GetComponent<BoxCollider2D>();
         this.scaleIncrease = 2.5f;
