@@ -543,12 +543,17 @@ MonoBehaviour:
   otter: {fileID: 829920870}
   bg1: {fileID: 618376714}
   bg2: {fileID: 1286974346}
-  sunSprite: {fileID: 21300000, guid: 9747154be4dc2eb4184d7bb87799cc96, type: 3}
-  twiSprite: {fileID: 21300000, guid: 0c6258aa2cec37341b08a27ee369020b, type: 3}
-  midAbSprite: {fileID: 21300000, guid: 9747154be4dc2eb4184d7bb87799cc96, type: 3}
+  sunNon1: {fileID: 21300000, guid: e1fe49e5f6202c64bba7cced17983025, type: 3}
+  sunNon2: {fileID: 21300000, guid: 8b0e1ef624c09624bb0a9136ab65351d, type: 3}
+  sunRe: {fileID: 21300000, guid: 5fe9dc32b35ce2a4fa3e3823903bf21c, type: 3}
+  twiNon1T: {fileID: 21300000, guid: 8fced1c2f33a6e04f9519f43c7e4a1b4, type: 3}
+  twiNon2: {fileID: 21300000, guid: cfec6539ef6cda3429c147a44e9d1877, type: 3}
+  twiRe1: {fileID: 21300000, guid: ac2983c8a64527f4d90f0e175b51dab8, type: 3}
+  twiRe2: {fileID: 21300000, guid: 7e5a1480ca6cdc746aab88f132397978, type: 3}
+  twiNon3T: {fileID: 21300000, guid: 261d12df5d946db41993410d7036aed8, type: 3}
   sunlightRepeats: 2
   twilightRepeats: 2
-  abyssRepeats: 2
+  abyssRepeats: 0
   bottom: {fileID: 699369881}
 --- !u!4 &438820961 stripped
 Transform:
@@ -1913,7 +1918,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b0e1ef624c09624bb0a9136ab65351d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 261d12df5d946db41993410d7036aed8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
