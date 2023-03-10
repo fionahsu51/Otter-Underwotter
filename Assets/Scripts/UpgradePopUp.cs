@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UpgradePopUp : MonoBehaviour
 {
@@ -11,6 +12,22 @@ public class UpgradePopUp : MonoBehaviour
     GameObject depthDisplay;
     public Button option1;
     public Button option2;
+    public TMP_Text option1title;
+    public TMP_Text option2title;
+
+    int option1index;
+    int option2index;
+
+    //Data structure to store upgrades
+    string [,] upgrades = new string[2,2]
+    {
+        //0
+        {"Double Damage", "Your pistol deals twice as much damage."}, 
+        
+        //1
+        {"Shell Shock", "Your shotgun can stun enemies, holding them in place for a moment."}
+    
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +45,14 @@ public class UpgradePopUp : MonoBehaviour
 
         option1.onClick.AddListener(() => TaskOnClick(1));
         option2.onClick.AddListener(() => TaskOnClick(2));
+
+        //Generate Upgrades
+        option1index = 0;
+        option2index = 1;
+
+        //Put upgrade text on UI
+        option1title.text = upgrades[option1index, 0];
+        option2title.text = upgrades[option2index, 0];
 
     }
 
