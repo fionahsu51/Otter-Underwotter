@@ -14,6 +14,8 @@ public class UpgradePopUp : MonoBehaviour
     public Button option2;
     public TMP_Text option1title;
     public TMP_Text option2title;
+    shoot pistol;
+    //AlternateShoot shotgun;
 
     int option1index;
     int option2index;
@@ -36,6 +38,7 @@ public class UpgradePopUp : MonoBehaviour
         weaponDisplay = GameObject.Find("Weapon Switch Display");
         healthBubble = GameObject.Find("Bubble Health");
         depthDisplay = GameObject.Find("Depth Indicator");
+        pistol = GameObject.Find("Pistol").GetComponent<shoot>();
         
         weaponDisplay.SetActive(false);
         healthBubble.SetActive(false);
@@ -65,9 +68,11 @@ public class UpgradePopUp : MonoBehaviour
     void TaskOnClick(int button){
         if(button == 1){
             Debug.Log("option 1 clicked!");
+            ApplyUpgrade(option1index);
             Close();
         }else{
             Debug.Log("option 2 clicked!");
+            ApplyUpgrade(option2index);
             Close();
         }
     }
@@ -79,6 +84,19 @@ public class UpgradePopUp : MonoBehaviour
         depthDisplay.SetActive(true);
         Time.timeScale = 1;
         Destroy(gameObject);
+    }
+
+    void ApplyUpgrade(int index){
+        switch(index){
+            case 0:
+                pistol.damage = 20f;
+                Debug.Log("Pistol damage: ");
+                Debug.Log(pistol.damage);
+                break;
+            default:
+                Debug.Log("No upgrade applied");
+                break;
+        }
     }
 
 }
