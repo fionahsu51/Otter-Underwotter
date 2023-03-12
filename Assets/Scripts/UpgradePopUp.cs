@@ -15,6 +15,7 @@ public class UpgradePopUp : MonoBehaviour
     public TMP_Text option1title;
     public TMP_Text option2title;
     shoot pistol;
+    bool NoMoreUpgrades = false;
 
     //AlternateShoot shotgun;
 
@@ -57,37 +58,41 @@ public class UpgradePopUp : MonoBehaviour
         option2.onClick.AddListener(() => TaskOnClick(2));
 
         //Generate Upgrades
-        if(pistol.takenIndices.Count <= 4){
-            option1index = Random.Range(0, 3);
+        if(pistol.takenIndices.Count <= 3){
+            option1index = Random.Range(0, 4);
             while(pistol.takenIndices.Contains(option1index)){
-                option1index = Random.Range(0, 3);
+                option1index = Random.Range(0, 4);
             }
         
-            if(pistol.takenIndices.Count >= 2){
+            if(pistol.takenIndices.Count >= 3){
                 option2index = option1index;
             }else{
-                option2index = Random.Range(0, 3);
+                option2index = Random.Range(0, 4);
                 while(option2index == option1index || pistol.takenIndices.Contains(option2index)){
-                    option2index = Random.Range(0, 3);
+                    option2index = Random.Range(0, 4);
                 }
             }
+
+            //Put upgrade text on UI
+            option1title.text = upgrades[option1index, 0];
+            option2title.text = upgrades[option2index, 0];
         }else{
-            Close(); 
+            NoMoreUpgrades = true;
         }
 
         
         
 
-        //Put upgrade text on UI
-        option1title.text = upgrades[option1index, 0];
-        option2title.text = upgrades[option2index, 0];
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(NoMoreUpgrades == true){
+            Close();
+        }
     }
 
     void TaskOnClick(int button){
