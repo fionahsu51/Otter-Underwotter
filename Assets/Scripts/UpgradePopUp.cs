@@ -14,6 +14,8 @@ public class UpgradePopUp : MonoBehaviour
     public Button option2;
     public TMP_Text option1title;
     public TMP_Text option2title;
+    public TMP_Text option1desc;
+    public TMP_Text option2desc;
     shoot pistol;
     bool NoMoreUpgrades = false;
 
@@ -76,6 +78,8 @@ public class UpgradePopUp : MonoBehaviour
             //Put upgrade text on UI
             option1title.text = upgrades[option1index, 0];
             option2title.text = upgrades[option2index, 0];
+            option1desc.text = upgrades[option1index, 1];
+            option2desc.text = upgrades[option2index, 1];
         }else{
             NoMoreUpgrades = true;
         }
