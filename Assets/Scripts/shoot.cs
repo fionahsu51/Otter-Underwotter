@@ -9,6 +9,7 @@ public class shoot : MonoBehaviour
     public GameObject bulletPrefab;
     public float pressedSpace;
     public float damage;
+    public List<int> takenIndices = new List<int>();
     
     // Start is called before the first frame update
     void Start()

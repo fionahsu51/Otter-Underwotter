@@ -15,19 +15,26 @@ public class UpgradePopUp : MonoBehaviour
     public TMP_Text option1title;
     public TMP_Text option2title;
     shoot pistol;
+
     //AlternateShoot shotgun;
 
     int option1index;
     int option2index;
 
     //Data structure to store upgrades
-    string [,] upgrades = new string[2,2]
+    string [,] upgrades = new string[4,2]
     {
         //0
         {"Double Damage", "Your pistol deals twice as much damage."}, 
         
         //1
-        {"Shell Shock", "Your shotgun can stun enemies, holding them in place for a moment."}
+        {"Shell Shock", "Your shotgun can stun enemies, holding them in place for a moment."},
+
+        //2
+        {"Upgrade 2", "Flavor text"},
+
+        //3
+        {"Upgrade 3", "Flavor text"}
     
     };
 
@@ -50,8 +57,26 @@ public class UpgradePopUp : MonoBehaviour
         option2.onClick.AddListener(() => TaskOnClick(2));
 
         //Generate Upgrades
-        option1index = 0;
-        option2index = 1;
+        if(pistol.takenIndices.Count <= 4){
+            option1index = Random.Range(0, 3);
+            while(pistol.takenIndices.Contains(option1index)){
+                option1index = Random.Range(0, 3);
+            }
+        
+            if(pistol.takenIndices.Count >= 2){
+                option2index = option1index;
+            }else{
+                option2index = Random.Range(0, 3);
+                while(option2index == option1index || pistol.takenIndices.Contains(option2index)){
+                    option2index = Random.Range(0, 3);
+                }
+            }
+        }else{
+            Close(); 
+        }
+
+        
+        
 
         //Put upgrade text on UI
         option1title.text = upgrades[option1index, 0];
@@ -69,16 +94,18 @@ public class UpgradePopUp : MonoBehaviour
         if(button == 1){
             Debug.Log("option 1 clicked!");
             ApplyUpgrade(option1index);
+            pistol.takenIndices.Add(option1index);
             Close();
         }else{
             Debug.Log("option 2 clicked!");
             ApplyUpgrade(option2index);
+            pistol.takenIndices.Add(option2index);
             Close();
         }
     }
 
     public void Close(){
-        
+        Debug.Log(pistol.takenIndices.Count);
         weaponDisplay.SetActive(true);
         healthBubble.SetActive(true);
         depthDisplay.SetActive(true);
