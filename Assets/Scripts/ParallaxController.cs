@@ -20,8 +20,8 @@ public class ParallaxController : MonoBehaviour
     private float sectionHeight;
     private float sectionWidth;
     private float sectionScale;
-    private float minSeparation;
-    private float maxSeparation;
+    //private float minSeparation;
+    //private float maxSeparation;
 
     public GameObject test;
 
@@ -33,8 +33,8 @@ public class ParallaxController : MonoBehaviour
         //lastTwilight = greg.GetComponent<Scroller>().lastTwilight;
 
         parallaxRate = 0.6f;
-        minSeparation = 1f; //these values aren't actually used.  just a bit of safety against an infinite do-while loop
-        maxSeparation = 3f;
+        //minSeparation = 1f; //these values aren't actually used.  just a bit of safety against an infinite do-while loop
+        //maxSeparation = 3f;
 
 
         //Instantiate(testPrefab, new Vector3(0f, -12f, 0f), Quaternion.identity);
@@ -55,8 +55,8 @@ public class ParallaxController : MonoBehaviour
             sectionScale = greg.GetComponent<Scroller>().sectionScale;
             lastSunlight = greg.GetComponent<Scroller>().lastSunlight;
             lastTwilight = greg.GetComponent<Scroller>().lastTwilight;
-            minSeparation = 2f;
-            maxSeparation = 5f;
+            //minSeparation = 2f;
+            //maxSeparation = 5f;
             for (int i = -1; i >= -lastSunlight; i--) {
                 //float at = i * sectionHeight/2;
                 float at = i * sectionHeight;
