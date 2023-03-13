@@ -24,6 +24,7 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         animator.SetBool("moving", moving);
+        
         faceMouse();
 
         if (Input.GetMouseButton(0) && mouseHover == false)
