@@ -15,7 +15,7 @@ public abstract class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -30,6 +30,7 @@ public abstract class Enemy : MonoBehaviour
     public void takeDamage(float dmg){
 
         health -= dmg;
+        StartCoroutine("EnemyFlash");
     }
 
     public void die(){
@@ -37,5 +38,15 @@ public abstract class Enemy : MonoBehaviour
     }
 
     public abstract void move();
+
+    // With help from here. Thank you Lethn!
+    // https://forum.unity.com/threads/solved-blink-white-when-hit.788159/
+    public IEnumerator EnemyFlash ()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+        StopCoroutine("EnemyFlash");
+    }
 
 }

@@ -5,10 +5,7 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
 
-    private float openRange = 2f;
-    private bool opened = false;
     public GameObject popUpPrefab;
-    //private UpgradePopUp popup;
 
     void Update() 
     {
@@ -26,7 +23,6 @@ public class Chest : MonoBehaviour
     }
 
     public void Open(){
-        opened = true;
         Time.timeScale = 0;
         Vector3 pos = new Vector3(0, 0, 0);
         Instantiate(popUpPrefab, pos, Quaternion.identity);

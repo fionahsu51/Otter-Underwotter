@@ -8,6 +8,8 @@ public class shoot : MonoBehaviour
     public Transform shootingPoint;
     public GameObject bulletPrefab;
     public float pressedSpace;
+    public float damage;
+    public List<int> takenIndices = new List<int>();
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,8 @@ public class shoot : MonoBehaviour
         //bool input2 = Keyboard.current.zButton.wasPressedThisFrame;
         if(Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0)
         {
-            Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+            Bullet newbullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation).GetComponent<Bullet>();
+            newbullet.damage = damage;
         }
 
         if (input) 

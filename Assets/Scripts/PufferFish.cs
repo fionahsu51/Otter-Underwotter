@@ -14,6 +14,7 @@ public class PufferFish : Enemy
     private float originalSpeed;
     private BoxCollider2D collider;
     public float scaleIncrease;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,6 @@ public class PufferFish : Enemy
         this.inflated = false;
         this.collider = GetComponent<BoxCollider2D>();
         this.scaleIncrease = 2.5f;
-
     }
 
     // Update is called once per frame
@@ -102,6 +102,6 @@ public class PufferFish : Enemy
             }
         }
         
-
     }
+
 }

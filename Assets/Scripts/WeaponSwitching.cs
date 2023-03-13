@@ -19,7 +19,7 @@ public class WeaponSwitching : MonoBehaviour
     {
         int previousSelectedWeapon = selectedWeapon;
 
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
         {
             if(selectedWeapon >= transform.childCount - 1)
             {

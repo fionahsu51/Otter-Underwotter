@@ -39,6 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3809313077
+    locked: 0
+  - name: NonCollidable Ornaments 2
+    uniqueID: 3318392417
+    locked: 0
+  - name: NonCollidable Ornaments
+    uniqueID: 564870679
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
