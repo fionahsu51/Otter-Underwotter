@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Scroller : MonoBehaviour
+public class Scroller_Outdated : MonoBehaviour
 {
 
     public GameObject otter;

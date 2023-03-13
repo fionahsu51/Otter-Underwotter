@@ -3,21 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class SingleScroller : MonoBehaviour
+public class Scroller : MonoBehaviour
 {
 
     public GameObject otter;
     public SpriteRenderer bg1;
     public SpriteRenderer bg2;
-    //public Sprite startSprite;
-    //public Sprite sunSprite;
-    //public Sprite tranSunTwiSprite;
-    //public Sprite twiSprite;
-    //public Sprite tranTwiMidSprite;
-    //public Sprite midAbSprite;
-    //public Sprite tranMidAbSprite;
-    //public Sprite abSprite;
-    //public Sprite endSprite;
 
     //Non is short for Nonrepeating.
     //Re is short for repeating.  So sunNon2 is short for sunlight zon nonrepeating 1.
@@ -33,18 +24,18 @@ public class SingleScroller : MonoBehaviour
     private Sprite[] backgrounds;
     private float depth;
 
-
-
     private float time;
-    private int section;
-    private float sectionSize;
+    public int section;
+    public float sectionSize;
+    public float sectionWidth;
+    public float sectionScale;
 
     private float offset;
     private float start;
 
-    //private int sunlightLimit;
-    //private int twilightLimit;
-    //private int midnightLimit;
+    public int lastSunlight;
+    public int lastTwilight;
+    public int lastAbyss;
     private int end;
 
     public int sunlightRepeats;
@@ -57,9 +48,16 @@ public class SingleScroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        lastSunlight = 2 + sunlightRepeats;
+        lastTwilight = lastSunlight + 2 + 2 * twilightRepeats + 2;
+
         time = 0f;
         section = 0;
         start = bg1.transform.position.y/2f;
+        sectionSize = bg1.bounds.size.y; // used for ParallaxController
+        sectionWidth = bg1.bounds.size.x;
+        sectionScale = bg1.transform.localScale.x;
 
         // teleport bg2 to directly below bg1
         bg2.transform.position = new Vector3(bg1.transform.position.x, bg1.transform.position.y + bg1.bounds.size.y/2, bg2.transform.position.z);
@@ -88,6 +86,8 @@ public class SingleScroller : MonoBehaviour
         }
         backgrounds[++at] = twiRe1;
         backgrounds[++at] = twiNon3T;
+        //lastTwilight = at;  lastTwilight = lastSunlight + 2 + 2 * twilightRepeats + 1 + 1
+        lastAbyss = at + 1;
         // array should be populated!
 
         //teleport the bottom collider to the end scene
@@ -96,7 +96,7 @@ public class SingleScroller : MonoBehaviour
         bottomPos += (6 * bg1.bounds.size.y) / 10;
         bottom.transform.position = new Vector3(bottom.transform.position.x, bottomPos, bottom.transform.position.z);
 
-        string printval = "\n";
+        /*string printval = "\n";
         for (int i=0; i<backgrounds.Length; i++) {
             printval += i.ToString() + " |";
             if (backgrounds[i] != null) {
@@ -104,7 +104,7 @@ public class SingleScroller : MonoBehaviour
             } else {
                 printval += "NULL\n";
             }
-        }
+        }*/
         //Debug.Log(printval);
         
     }
