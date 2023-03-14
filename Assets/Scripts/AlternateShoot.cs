@@ -12,6 +12,8 @@ public class AlternateShoot : MonoBehaviour
     public AudioSource shotgunShootSFX;
     //private bool shootDisabled = false;
     //private Coroutine buttonDisabled = null;
+    public float fireRate = 1f;
+    public float nextShot;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +32,13 @@ public class AlternateShoot : MonoBehaviour
         //    buttonDisabled = StartCoroutine("ShootCooldown");
         //}
 
-        if(Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0)
+        if(Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0 && Time.time > nextShot)
         {
             shotgunShootSFX.Play();
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
             Instantiate(bulletPrefab, shootingPoint2.position, transform.rotation);
             //buttonDisabled = StartCoroutine("ShootCooldown");
+            nextShot = Time.time + fireRate;
         }
 
         if (input) 

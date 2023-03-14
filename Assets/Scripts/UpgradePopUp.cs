@@ -50,9 +50,9 @@ public class UpgradePopUp : MonoBehaviour
         depthDisplay = GameObject.Find("Depth Indicator");
         pistol = GameObject.Find("Pistol").GetComponent<shoot>();
         
-        weaponDisplay.SetActive(false);
-        healthBubble.SetActive(false);
-        depthDisplay.SetActive(false);
+        //weaponDisplay.SetActive(false);
+        //healthBubble.SetActive(false);
+        //depthDisplay.SetActive(false);
 
         //Get buttons, and close if they are clicked
 
@@ -115,9 +115,9 @@ public class UpgradePopUp : MonoBehaviour
 
     public void Close(){
         Debug.Log(pistol.takenIndices.Count);
-        weaponDisplay.SetActive(true);
-        healthBubble.SetActive(true);
-        depthDisplay.SetActive(true);
+        //weaponDisplay.SetActive(true);
+        //healthBubble.SetActive(true);
+        //depthDisplay.SetActive(true);
         Time.timeScale = 1;
         Destroy(gameObject);
     }
