@@ -12,12 +12,23 @@ public class Depth : MonoBehaviour
 
     void Start()
     {
-        playerDepth = 0;
+        playerDepth = 5;
     }
 
     void Update()
     {
         playerDepth = (int)target.position.y;
+
+        if(playerDepth > 0)
+        {
+            playerDepth = 5;
+        }
+
+        //No negative numbers
+        else if(playerDepth < 0)
+        {
+            playerDepth *= -1;
+        }
         depthText.text = playerDepth.ToString();
     }
 }
