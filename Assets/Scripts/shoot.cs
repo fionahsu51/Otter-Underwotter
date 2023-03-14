@@ -10,7 +10,8 @@ public class shoot : MonoBehaviour
     public float pressedSpace;
     public float damage;
     public List<int> takenIndices = new List<int>();
-    
+    public AudioSource pisotlShootSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class shoot : MonoBehaviour
         //bool input2 = Keyboard.current.zButton.wasPressedThisFrame;
         if(Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0)
         {
+            pisotlShootSFX.Play();
             Bullet newbullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation).GetComponent<Bullet>();
             newbullet.damage = damage;
         }

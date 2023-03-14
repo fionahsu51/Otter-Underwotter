@@ -6,12 +6,15 @@ public class KickOffSound : MonoBehaviour
 {
     public AudioSource kickoffAudio;
     public AudioSource swimmingAudio;
+    public AudioSource ambienceAudio;
     private bool kickoffPlaying = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        ambienceAudio.loop = true;
         swimmingAudio.loop = true;
+        ambienceAudio.Play();
     }
 
     // Update is called once per frame

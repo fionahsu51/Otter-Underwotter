@@ -9,6 +9,8 @@ public class Depth : MonoBehaviour
     public Transform target;
     public TMP_Text depthText;
     int playerDepth;
+    int previousPlayerDepth;
+    string feet_string = " ft";
 
     void Start()
     {
@@ -17,18 +19,22 @@ public class Depth : MonoBehaviour
 
     void Update()
     {
+        previousPlayerDepth = playerDepth;
         playerDepth = (int)target.position.y;
 
-        if(playerDepth > 0)
+        //Optimizing the starting "depth" taken from the player's y-axis
+        if(playerDepth <= 0 && playerDepth > -5)
         {
             playerDepth = 5;
         }
 
         //No negative numbers
-        else if(playerDepth < 0)
+        else if(playerDepth <= -5)
         {
             playerDepth *= -1;
         }
+
         depthText.text = playerDepth.ToString();
+        depthText.text += feet_string;
     }
 }

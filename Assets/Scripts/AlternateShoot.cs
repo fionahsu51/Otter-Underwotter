@@ -9,7 +9,8 @@ public class AlternateShoot : MonoBehaviour
     public Transform shootingPoint2;
     public GameObject bulletPrefab;
     public float pressedSpace;
-    
+    public AudioSource shotgunShootSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class AlternateShoot : MonoBehaviour
         ///bool input2 = Mouse.current.rightButton.wasPressedThisFrame;
         if(Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0)
         {
+            shotgunShootSFX.Play();
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
             Instantiate(bulletPrefab, shootingPoint2.position, transform.rotation);
         }

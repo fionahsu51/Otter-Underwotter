@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
 {
     public Button yesButton;
     public Button noButton;
+    public AudioSource bubblePop;
 
     void Start()
     {
@@ -31,8 +32,10 @@ public class GameOver : MonoBehaviour
 
     void TaskOnClick(int button){
         if(button == 1){
+            bubblePop.Play();
             SceneManager.LoadScene("OFFICIAL");
         }else{
+            bubblePop.Play();
             SceneManager.LoadScene("Title_Screen");
         }
     }
