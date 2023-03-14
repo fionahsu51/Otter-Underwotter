@@ -33,10 +33,23 @@ public class GameOver : MonoBehaviour
     void TaskOnClick(int button){
         if(button == 1){
             bubblePop.Play();
-            SceneManager.LoadScene("OFFICIAL");
-        }else{
-            bubblePop.Play();
-            SceneManager.LoadScene("Title_Screen");
+            StartCoroutine("LoadLevel");
         }
+        else{
+            bubblePop.Play();
+            StartCoroutine("LoadTitle");
+        }
+    }
+
+    IEnumerator LoadLevel()
+    {
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene("OFFICIAL");
+    }
+
+    IEnumerator LoadTitle()
+    {
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene("Title_Screen");
     }
 }
