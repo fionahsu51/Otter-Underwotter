@@ -30,7 +30,7 @@ public class FishMove : MonoBehaviour
     void FixedUpdate() {
         float gotY = transform.position.y;
         transform.position = new Vector3(transform.position.x + moveX, transform.position.y + moveY, transform.position.z);
-        if (transform.position.y > 0f && direction == "up") {
+        if (transform.position.y > 0f) {
             Destroy(gameObject);
         }
         if (transform.position.x < -15f && direction == "left") {
