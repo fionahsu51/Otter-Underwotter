@@ -1406,6 +1406,7 @@ Transform:
   - {fileID: 177683245}
   - {fileID: 1493137694}
   - {fileID: 438820961}
+  - {fileID: 1291779926}
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6539,6 +6540,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3808021342560596344, guid: 3c731ceb92002414ba2a2a848ae9011f, type: 3}
   m_PrefabInstance: {fileID: 1974576080}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1291779926 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+  m_PrefabInstance: {fileID: 3475366232998651745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1292650425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11625,6 +11631,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a93ae414e4f3fb440bab259aea4556ec, type: 3}
+--- !u!1001 &3475366232998651745
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 233959902}
+    m_Modifications:
+    - target: {fileID: 3475366231999731764, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_Name
+      value: Stingray
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731766, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7335
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6083
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.6483808
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475366231999731767, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
 --- !u!1001 &3524084317777582963
 PrefabInstance:
   m_ObjectHideFlags: 0
