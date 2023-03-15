@@ -14,6 +14,7 @@ public class PufferFish : Enemy
     private float originalSpeed;
     private BoxCollider2D collider;
     public float scaleIncrease;
+    public AudioSource inflateSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +81,7 @@ public class PufferFish : Enemy
         if (!this.inflated) {
             float dist = Vector3.Distance(otter.transform.position, transform.position);
             if (dist < this.inflateDistance) {
+                inflateSFX.Play();
                 //transform.localScale = new Vector3(transform.localScale.x*this.scaleIncrease, transform.localScale.y*this.scaleIncrease, 0f);
                 this.renderer.sprite = inflatedSprite;
                 this.speed = 0f;
