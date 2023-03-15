@@ -6,13 +6,19 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public float damage;
+    public float scale = 0.3f;
     private Rigidbody2D rb;
+
+    void Start(){
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * speed;
+        transform.localScale = new Vector3(scale, scale, 1.0f);
     }
 
     void OnBecameInvisible() {

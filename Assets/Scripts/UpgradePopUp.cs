@@ -17,6 +17,7 @@ public class UpgradePopUp : MonoBehaviour
     public TMP_Text option1desc;
     public TMP_Text option2desc;
     shoot pistol;
+    //AlternateShoot shotgun;
     bool NoMoreUpgrades = false;
 
     //AlternateShoot shotgun;
@@ -55,6 +56,7 @@ public class UpgradePopUp : MonoBehaviour
         healthBubble = GameObject.Find("Bubble Health");
         depthDisplay = GameObject.Find("Depth Indicator");
         pistol = GameObject.Find("Pistol").GetComponent<shoot>();
+        //shotgun = GameObject.Find("Shotgun").GetComponent<AlternateShoot>();
         
         //weaponDisplay.SetActive(false);
         //healthBubble.SetActive(false);
@@ -89,11 +91,6 @@ public class UpgradePopUp : MonoBehaviour
         }else{
             NoMoreUpgrades = true;
         }
-
-        
-        
-
-        
 
     }
 
@@ -134,6 +131,20 @@ public class UpgradePopUp : MonoBehaviour
                 pistol.damage = 20f;
                 Debug.Log("Pistol damage: ");
                 Debug.Log(pistol.damage);
+                break;
+            case 2:
+                pistol.scale = 0.9f;
+                pistol.speed = 10f;
+                Debug.Log("case 2");
+                break;
+            case 4:
+                shotgun.fireRate = 0.6f;
+                Debug.Log("case 4");
+                break;
+            case 5:
+                pistol.speed *= 1.5f;
+                Debug.Log("case 5");
+                Debug.Log(pistol.speed);
                 break;
             default:
                 Debug.Log("No upgrade applied");
