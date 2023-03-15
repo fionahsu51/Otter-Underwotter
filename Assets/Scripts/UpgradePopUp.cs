@@ -17,6 +17,7 @@ public class UpgradePopUp : MonoBehaviour
     public TMP_Text option1desc;
     public TMP_Text option2desc;
     shoot pistol;
+    //AlternateShoot shotgun;
     bool NoMoreUpgrades = false;
 
     //AlternateShoot shotgun;
@@ -25,19 +26,25 @@ public class UpgradePopUp : MonoBehaviour
     int option2index;
 
     //Data structure to store upgrades
-    string [,] upgrades = new string[4,2]
+    string [,] upgrades = new string[6,2]
     {
         //0
-        {"Double Damage", "Your pistol deals twice as much damage."}, 
+        {"Crustacean Devastation", "Your pistol deals twice as much damage."}, 
         
         //1
         {"Shell Shock", "Your shotgun can stun enemies, holding them in place for a moment."},
 
         //2
-        {"Upgrade 2", "Flavor text"},
+        {"Prawn Pistol", "Oh whoops, I dropped my magnum shrimp...."},
 
         //3
-        {"Upgrade 3", "Flavor text"}
+        {"Bivalve Barrel", "Who said shotguns need to have a short range?"},
+
+        //4
+        {"Conchentrated Fire", "Your shotgun can fire much faster."},
+
+        //5
+        {"Swimmeret Shot", "Your pistol bullets move faster."}
     
     };
 
@@ -49,6 +56,7 @@ public class UpgradePopUp : MonoBehaviour
         healthBubble = GameObject.Find("Bubble Health");
         depthDisplay = GameObject.Find("Depth Indicator");
         pistol = GameObject.Find("Pistol").GetComponent<shoot>();
+        //shotgun = GameObject.Find("Shotgun").GetComponent<AlternateShoot>();
         
         //weaponDisplay.SetActive(false);
         //healthBubble.SetActive(false);
@@ -60,18 +68,18 @@ public class UpgradePopUp : MonoBehaviour
         option2.onClick.AddListener(() => TaskOnClick(2));
 
         //Generate Upgrades
-        if(pistol.takenIndices.Count <= 3){
-            option1index = Random.Range(0, 4);
+        if(pistol.takenIndices.Count <= 5){
+            option1index = Random.Range(0, 6);
             while(pistol.takenIndices.Contains(option1index)){
-                option1index = Random.Range(0, 4);
+                option1index = Random.Range(0, 6);
             }
         
-            if(pistol.takenIndices.Count >= 3){
+            if(pistol.takenIndices.Count >= 5){
                 option2index = option1index;
             }else{
-                option2index = Random.Range(0, 4);
+                option2index = Random.Range(0, 6);
                 while(option2index == option1index || pistol.takenIndices.Contains(option2index)){
-                    option2index = Random.Range(0, 4);
+                    option2index = Random.Range(0, 6);
                 }
             }
 
@@ -83,11 +91,6 @@ public class UpgradePopUp : MonoBehaviour
         }else{
             NoMoreUpgrades = true;
         }
-
-        
-        
-
-        
 
     }
 
@@ -128,6 +131,20 @@ public class UpgradePopUp : MonoBehaviour
                 pistol.damage = 20f;
                 Debug.Log("Pistol damage: ");
                 Debug.Log(pistol.damage);
+                break;
+            case 2:
+                pistol.scale = 0.9f;
+                pistol.speed = 10f;
+                Debug.Log("case 2");
+                break;
+            case 4:
+                shotgun.fireRate = 0.6f;
+                Debug.Log("case 4");
+                break;
+            case 5:
+                pistol.speed *= 1.5f;
+                Debug.Log("case 5");
+                Debug.Log(pistol.speed);
                 break;
             default:
                 Debug.Log("No upgrade applied");

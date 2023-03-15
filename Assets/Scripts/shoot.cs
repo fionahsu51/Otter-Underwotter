@@ -9,6 +9,8 @@ public class shoot : MonoBehaviour
     public GameObject bulletPrefab;
     public float pressedSpace;
     public float damage;
+    public float scale = 0.3f;
+    public float speed;
     public List<int> takenIndices = new List<int>();
     public AudioSource pisotlShootSFX;
 
@@ -28,6 +30,8 @@ public class shoot : MonoBehaviour
             pisotlShootSFX.Play();
             Bullet newbullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation).GetComponent<Bullet>();
             newbullet.damage = damage;
+            newbullet.scale = scale;
+            newbullet.speed = speed;
         }
 
         if (input) 
