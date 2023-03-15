@@ -44,5 +44,4 @@ public class SeaAngel : Enemy
             dir = Vector3.up;
         }
     }
-
 }
