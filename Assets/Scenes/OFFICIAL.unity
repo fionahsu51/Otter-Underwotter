@@ -1744,7 +1744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5964527871650675601, guid: c119cb51814159e48bf1a3d5fb9036aa, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5964527871650675601, guid: c119cb51814159e48bf1a3d5fb9036aa, type: 3}
       propertyPath: m_SortingLayerID
@@ -2657,7 +2657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8947954617430591214, guid: f7234a9d671ceb54d8d6c11eb39de785, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8947954617430591214, guid: f7234a9d671ceb54d8d6c11eb39de785, type: 3}
       propertyPath: m_SortingLayerID
@@ -2728,7 +2728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8356339889305717196, guid: 3348c8d7aafddd140a54e6cf171e8b21, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8356339889305717196, guid: 3348c8d7aafddd140a54e6cf171e8b21, type: 3}
       propertyPath: m_SortingLayerID
@@ -4643,7 +4643,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2343981910142035288, guid: 0607b6a7d8af20248a26378e2f76d27c, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2343981910142035288, guid: 0607b6a7d8af20248a26378e2f76d27c, type: 3}
       propertyPath: m_SortingLayerID
@@ -5331,7 +5331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8947954617430591214, guid: f7234a9d671ceb54d8d6c11eb39de785, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8947954617430591214, guid: f7234a9d671ceb54d8d6c11eb39de785, type: 3}
       propertyPath: m_SortingLayerID
@@ -6029,7 +6029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6765715483336201875, guid: a9631532bf6e6ee429c3f245f32b0a17, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6765715483336201875, guid: a9631532bf6e6ee429c3f245f32b0a17, type: 3}
       propertyPath: m_SortingLayerID
@@ -8168,7 +8168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5964527871650675601, guid: c119cb51814159e48bf1a3d5fb9036aa, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5964527871650675601, guid: c119cb51814159e48bf1a3d5fb9036aa, type: 3}
       propertyPath: m_SortingLayerID
@@ -9093,7 +9093,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3537846571747374080, guid: 0b776f4d54f038d479e431f59a5f3ea5, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3537846571747374080, guid: 0b776f4d54f038d479e431f59a5f3ea5, type: 3}
       propertyPath: m_SortingLayerID
@@ -9202,7 +9202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6765715483336201875, guid: a9631532bf6e6ee429c3f245f32b0a17, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6765715483336201875, guid: a9631532bf6e6ee429c3f245f32b0a17, type: 3}
       propertyPath: m_SortingLayerID
@@ -10609,6 +10609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
+  popup: 0
+  activeforpopup: 0
 --- !u!114 &2105140966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11626,6 +11628,10 @@ PrefabInstance:
       propertyPath: pisotlShootSFX
       value: 
       objectReference: {fileID: 661907138}
+    - target: {fileID: 8589472796528364330, guid: 4e9533e8a9c0f97439e4da2dddf8a19a, type: 3}
+      propertyPath: m_Name
+      value: Weapons
+      objectReference: {fileID: 0}
     - target: {fileID: 8589472796567985493, guid: 4e9533e8a9c0f97439e4da2dddf8a19a, type: 3}
       propertyPath: m_Name
       value: Weapon Switch

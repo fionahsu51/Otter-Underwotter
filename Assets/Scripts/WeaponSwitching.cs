@@ -7,6 +7,8 @@ using UnityEngine;
 public class WeaponSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
+    public bool popup = false;
+    public bool ready = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,8 @@ public class WeaponSwitching : MonoBehaviour
             SelectWeapon();
         }
     }
-    void SelectWeapon()
+    
+    public void SelectWeapon()
     {
         int i = 0;
         foreach (Transform weapon in transform)
@@ -52,5 +55,15 @@ public class WeaponSwitching : MonoBehaviour
             }
             i++;
         }
+    }
+
+    public void PopUp(){
+        Debug.Log("activating weapons");
+        foreach (Transform weapon in transform)
+        {
+            weapon.gameObject.SetActive(true);
+        }
+        ready = true;
+        Debug.Log("activated weapons");
     }
 }

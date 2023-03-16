@@ -17,7 +17,8 @@ public class UpgradePopUp : MonoBehaviour
     public TMP_Text option1desc;
     public TMP_Text option2desc;
     shoot pistol;
-    //AlternateShoot shotgun;
+    AlternateShoot shotgun;
+    WeaponSwitching weapon;
     bool NoMoreUpgrades = false;
 
     //AlternateShoot shotgun;
@@ -35,7 +36,7 @@ public class UpgradePopUp : MonoBehaviour
         {"Shell Shock", "Your shotgun can stun enemies, holding them in place for a moment."},
 
         //2
-        {"Prawn Pistol", "Oh whoops, I dropped my magnum shrimp...."},
+        {"Prawn Pistol", "Oh whoops, I dropped my monster bullets that I use for my magnum shrimp...."},
 
         //3
         {"Bivalve Barrel", "Who said shotguns need to have a short range?"},
@@ -55,8 +56,11 @@ public class UpgradePopUp : MonoBehaviour
         weaponDisplay = GameObject.Find("Weapon Switch Display");
         healthBubble = GameObject.Find("Bubble Health");
         depthDisplay = GameObject.Find("Depth Indicator");
+        
+        weapon = GameObject.Find("Weapons").GetComponent<WeaponSwitching>();
+        
         pistol = GameObject.Find("Pistol").GetComponent<shoot>();
-        //shotgun = GameObject.Find("Shotgun").GetComponent<AlternateShoot>();
+        shotgun = GameObject.Find("Shotgun").GetComponent<AlternateShoot>();
         
         //weaponDisplay.SetActive(false);
         //healthBubble.SetActive(false);
@@ -122,6 +126,9 @@ public class UpgradePopUp : MonoBehaviour
         //healthBubble.SetActive(true);
         //depthDisplay.SetActive(true);
         Time.timeScale = 1;
+        weapon.popup = false;
+        weapon.ready = false;
+        weapon.SelectWeapon();
         Destroy(gameObject);
     }
 
@@ -137,8 +144,12 @@ public class UpgradePopUp : MonoBehaviour
                 pistol.speed = 10f;
                 Debug.Log("case 2");
                 break;
+            case 3:
+                shotgun.range = 0.5f;
+                Debug.Log("case 3");
+                break;
             case 4:
-                shotgun.fireRate = 0.6f;
+                shotgun.fireRate = 0.4f;
                 Debug.Log("case 4");
                 break;
             case 5:

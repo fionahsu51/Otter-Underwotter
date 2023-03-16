@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
 
     void Start(){
-        
     }
 
     // Update is called once per frame

@@ -6,6 +6,11 @@ public class Chest : MonoBehaviour
 {
 
     public GameObject popUpPrefab;
+    WeaponSwitching weapon;
+
+    void Start() {
+        weapon = GameObject.Find("Weapons").GetComponent<WeaponSwitching>();
+    }
 
     void Update() 
     {
@@ -23,6 +28,15 @@ public class Chest : MonoBehaviour
     }
 
     public void Open(){
+        StartCoroutine("Deliverance");
+    }
+
+    IEnumerator Deliverance(){
+        Debug.Log("March, deliverance");
+        weapon.PopUp();
+        Debug.Log("waiting for ready");
+        yield return new WaitUntil(()=>weapon.ready == true);
+        Debug.Log("making popup now");
         Time.timeScale = 0;
         Vector3 pos = new Vector3(0, 0, 0);
         Instantiate(popUpPrefab, pos, Quaternion.identity);

@@ -14,6 +14,7 @@ public class AlternateShoot : MonoBehaviour
     //private Coroutine buttonDisabled = null;
     public float fireRate = 1f;
     public float nextShot;
+    public float range = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +36,17 @@ public class AlternateShoot : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0 && Time.time > nextShot)
         {
             shotgunShootSFX.Play();
-            Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
-            Instantiate(bulletPrefab, shootingPoint2.position, transform.rotation);
+
+            Quaternion b1rotation = transform.rotation * Quaternion.Euler(0, 0, 45);
+            Quaternion b2rotation = transform.rotation * Quaternion.Euler(0, 0, 0);
+            Quaternion b3rotation = transform.rotation * Quaternion.Euler(0, 0, -45);
+
+            AlternateBullet b1 = Instantiate(bulletPrefab, shootingPoint.position, b1rotation).GetComponent<AlternateBullet>();
+            AlternateBullet b2 = Instantiate(bulletPrefab, shootingPoint.position, b2rotation).GetComponent<AlternateBullet>();
+            AlternateBullet b3 = Instantiate(bulletPrefab, shootingPoint.position, b3rotation).GetComponent<AlternateBullet>();
+            b1.range = range;
+            b2.range = range;
+            b3.range = range;
             //buttonDisabled = StartCoroutine("ShootCooldown");
             nextShot = Time.time + fireRate;
         }
