@@ -25,7 +25,10 @@ public class AlternateBullet : MonoBehaviour
         Enemy enemy = collision.GetComponent<Enemy>();
         Chest chest = collision.GetComponent<Chest>();
 
-        if(enemy != null){
+        Enemy enemy = collision.GetComponent<Enemy>();
+        Chest chest = collision.GetComponent<Chest>();
+        if (enemy != null)
+        {
             enemy.takeDamage(damage);
             Destroy(gameObject);
         }else if(chest != null){

@@ -27,7 +27,7 @@ public class UpgradePopUp : MonoBehaviour
     int option2index;
 
     //Data structure to store upgrades
-    string [,] upgrades = new string[6,2]
+    string[,] upgrades = new string[6, 2]
     {
         //0
         {"Crustacean Devastation", "Your pistol deals twice as much damage."}, 
@@ -46,7 +46,7 @@ public class UpgradePopUp : MonoBehaviour
 
         //5
         {"Swimmeret Shot", "Your pistol bullets move faster."}
-    
+
     };
 
     // Start is called before the first frame update
@@ -72,17 +72,23 @@ public class UpgradePopUp : MonoBehaviour
         option2.onClick.AddListener(() => TaskOnClick(2));
 
         //Generate Upgrades
-        if(pistol.takenIndices.Count <= 5){
+        if (pistol.takenIndices.Count <= 5)
+        {
             option1index = Random.Range(0, 6);
-            while(pistol.takenIndices.Contains(option1index)){
+            while (pistol.takenIndices.Contains(option1index))
+            {
                 option1index = Random.Range(0, 6);
             }
-        
-            if(pistol.takenIndices.Count >= 5){
+
+            if (pistol.takenIndices.Count >= 5)
+            {
                 option2index = option1index;
-            }else{
+            }
+            else
+            {
                 option2index = Random.Range(0, 6);
-                while(option2index == option1index || pistol.takenIndices.Contains(option2index)){
+                while (option2index == option1index || pistol.takenIndices.Contains(option2index))
+                {
                     option2index = Random.Range(0, 6);
                 }
             }
@@ -92,7 +98,9 @@ public class UpgradePopUp : MonoBehaviour
             option2title.text = upgrades[option2index, 0];
             option1desc.text = upgrades[option1index, 1];
             option2desc.text = upgrades[option2index, 1];
-        }else{
+        }
+        else
+        {
             NoMoreUpgrades = true;
         }
 
@@ -101,18 +109,23 @@ public class UpgradePopUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(NoMoreUpgrades == true){
+        if (NoMoreUpgrades == true)
+        {
             Close();
         }
     }
 
-    void TaskOnClick(int button){
-        if(button == 1){
+    void TaskOnClick(int button)
+    {
+        if (button == 1)
+        {
             Debug.Log("option 1 clicked!");
             ApplyUpgrade(option1index);
             pistol.takenIndices.Add(option1index);
             Close();
-        }else{
+        }
+        else
+        {
             Debug.Log("option 2 clicked!");
             ApplyUpgrade(option2index);
             pistol.takenIndices.Add(option2index);
@@ -120,7 +133,8 @@ public class UpgradePopUp : MonoBehaviour
         }
     }
 
-    public void Close(){
+    public void Close()
+    {
         Debug.Log(pistol.takenIndices.Count);
         //weaponDisplay.SetActive(true);
         //healthBubble.SetActive(true);
@@ -132,8 +146,10 @@ public class UpgradePopUp : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void ApplyUpgrade(int index){
-        switch(index){
+    void ApplyUpgrade(int index)
+    {
+        switch (index)
+        {
             case 0:
                 pistol.damage = 20f;
                 Debug.Log("Pistol damage: ");
