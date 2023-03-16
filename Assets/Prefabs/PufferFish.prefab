@@ -104,8 +104,12 @@ MonoBehaviour:
   speed: 3
   leftBound: -10
   rightBound: 10
+  status: 0
+  chestPrefab: {fileID: 1417188854212725375, guid: cb6bc9e3ace831246880c4d8fd9e111e, type: 3}
+  healthPickupPrefab: {fileID: 9000776491121777182, guid: 99d2aa6aa8a81c446a5fc0bfea610979, type: 3}
   inflatedSprite: {fileID: 21300000, guid: 36ddc1aea2e67294e9bd04df0f77db86, type: 3}
   scaleIncrease: 0
+  inflateSFX: {fileID: 0}
 --- !u!61 &353140936140571125
 BoxCollider2D:
   m_ObjectHideFlags: 0

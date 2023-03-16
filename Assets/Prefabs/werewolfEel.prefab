@@ -103,6 +103,9 @@ MonoBehaviour:
   speed: 0
   leftBound: 0
   rightBound: 0
+  status: 0
+  chestPrefab: {fileID: 1417188854212725375, guid: cb6bc9e3ace831246880c4d8fd9e111e, type: 3}
+  healthPickupPrefab: {fileID: 9000776491121777182, guid: 99d2aa6aa8a81c446a5fc0bfea610979, type: 3}
   sprite: {fileID: 2560825365206917859}
 --- !u!70 &2560825365206917871
 CapsuleCollider2D:
