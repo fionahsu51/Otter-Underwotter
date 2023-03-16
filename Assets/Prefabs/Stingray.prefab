@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3475366231999731766}
   - component: {fileID: 1291779929}
   - component: {fileID: 1291779930}
+  - component: {fileID: 1596243793253297510}
   m_Layer: 0
   m_Name: Stingray
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1125849031
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2f80f1df5cd697c44b944db15ca1dc99, type: 3}
+  m_Sprite: {fileID: 92550239, guid: d5fe009b2e75ed442bf0294ea2124a1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146,7 +147,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.83, y: 2.31}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -155,3 +156,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8, y: 1.89}
   m_EdgeRadius: 0
+--- !u!95 &1596243793253297510
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3475366231999731764}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43e7e370f3ce9e7439303444262c394a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

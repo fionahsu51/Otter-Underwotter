@@ -9,10 +9,12 @@ public class Stingray : Enemy
     //Max x-coordinates stingray can move side-to-side within
     public float leftMax;
     public float rightMax;
+    SpriteRenderer renderer;
 
     void Start()
     {
         switchDirection = false;
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class Stingray : Enemy
             if(this.transform.position.x >= rightMax)
             {
                 switchDirection = true;
+                renderer.flipX = true;
             }
 
             else
