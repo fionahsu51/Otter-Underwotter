@@ -15,6 +15,7 @@ public class PufferFish : Enemy
     private BoxCollider2D collider;
     public float scaleIncrease;
     public AudioSource inflateSFX;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,14 @@ public class PufferFish : Enemy
         this.inflated = false;
         this.collider = GetComponent<BoxCollider2D>();
         this.scaleIncrease = 2.5f;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("inflated", inflated);
+        
         if (startup <= 1f) {
             startup += Time.deltaTime;
         }
