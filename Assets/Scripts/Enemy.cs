@@ -11,6 +11,7 @@ public abstract class Enemy : MonoBehaviour
     public float rightBound;
     protected Rigidbody2D rb;
     protected Vector3 dir = Vector3.left;
+    public float status = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,15 @@ public abstract class Enemy : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         GetComponent<SpriteRenderer>().color = Color.white;
         StopCoroutine("EnemyFlash");
+    }
+
+    public IEnumerator Stun() {
+        status = 1;
+        GetComponent<SpriteRenderer>().color = Color.yellow;
+        yield return new WaitForSeconds(2.0f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+        status = 0;
+        StopCoroutine("Stun");
     }
 
 }

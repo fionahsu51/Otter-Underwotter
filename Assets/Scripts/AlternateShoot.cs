@@ -15,6 +15,7 @@ public class AlternateShoot : MonoBehaviour
     public float fireRate = 1f;
     public float nextShot;
     public float range = 0.2f;
+    public float status = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,9 @@ public class AlternateShoot : MonoBehaviour
             b1.range = range;
             b2.range = range;
             b3.range = range;
+            b1.status = status;
+            b2.status = status;
+            b3.status = status;
             //buttonDisabled = StartCoroutine("ShootCooldown");
             nextShot = Time.time + fireRate;
         }

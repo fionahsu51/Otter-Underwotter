@@ -17,7 +17,9 @@ public class Stingray : Enemy
 
     void Update()
     {
-        move();
+        if(status != 1){
+            move();
+        }
 
         if (health <= 0)
         {

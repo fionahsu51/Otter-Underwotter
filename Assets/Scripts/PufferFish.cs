@@ -38,7 +38,9 @@ public class PufferFish : Enemy
             startup += Time.deltaTime;
         }
 
-        move();
+        if(status != 1){
+            move();
+        }
 
         if(health <= 0){
             die();

@@ -155,6 +155,10 @@ public class UpgradePopUp : MonoBehaviour
                 Debug.Log("Pistol damage: ");
                 Debug.Log(pistol.damage);
                 break;
+            case 1:
+                shotgun.status = 1;
+                Debug.Log("case 1");
+                break;
             case 2:
                 pistol.scale = 0.9f;
                 pistol.speed = 10f;

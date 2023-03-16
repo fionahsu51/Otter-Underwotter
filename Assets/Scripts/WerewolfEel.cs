@@ -17,7 +17,9 @@ public class WerewolfEel : Enemy
     // Update is called once per frame
     void Update()
     {
-        move();
+        if(status != 1){
+            move();
+        }
         //Debug.Log(dashing);
         if(dashing > 0){
             speed = 20;

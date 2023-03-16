@@ -17,7 +17,9 @@ public class SeaAngel : Enemy
     // Update is called once per frame
     void Update()
     {
-        move();
+        if(status != 1){
+            move();
+        }
 
         if (health <= 0)
         {
