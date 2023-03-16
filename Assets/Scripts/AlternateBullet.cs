@@ -17,12 +17,18 @@ public class AlternateBullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collision){
-        
-        Enemy enemy = collision.GetComponent<Enemy>();
 
-        if(enemy != null){
+        Enemy enemy = collision.GetComponent<Enemy>();
+        Chest chest = collision.GetComponent<Chest>();
+        if (enemy != null)
+        {
             enemy.takeDamage(damage);
             Destroy(gameObject);
-        }   
+        }
+        else if (chest != null)
+        {
+            chest.Open();
+            Destroy(gameObject);
+        }
     }
 }
