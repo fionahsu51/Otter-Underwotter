@@ -42,7 +42,7 @@ public abstract class Enemy : MonoBehaviour
         int drop = Random.Range(0, 10);
         if(drop <= 5){
             Debug.Log("nothing");
-        }else if(drop > 5 && drop <= 9){
+        }else if(drop > 5 && drop <= 8){
             Debug.Log("health pickup");
             Instantiate(healthPickupPrefab, transform.position, transform.rotation);
         }else{
