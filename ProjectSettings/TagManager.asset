@@ -45,7 +45,13 @@ TagManager:
   - name: NonCollidable Ornaments 2
     uniqueID: 3318392417
     locked: 0
-  - name: NonCollidable Ornaments
+  - name: NonCollidable Ornaments 1.4
+    uniqueID: 1875129303
+    locked: 0
+  - name: NonCollidable Ornaments 1.5
+    uniqueID: 3569882753
+    locked: 0
+  - name: NonCollidable Ornaments 1
     uniqueID: 564870679
     locked: 0
   - name: Default

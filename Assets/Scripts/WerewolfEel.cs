@@ -17,10 +17,12 @@ public class WerewolfEel : Enemy
     // Update is called once per frame
     void Update()
     {
-        move();
+        if(status != 1){
+            move();
+        }
         //Debug.Log(dashing);
         if(dashing > 0){
-            speed = 20;
+            speed = 12;  //default was 20
         }else{
             speed = 0;
         }

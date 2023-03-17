@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
 
     public float health;
     public GameObject bubble;
+    public AudioSource healthSFX;
     // Update is called once per frame
     void Update()
     {
@@ -27,9 +28,17 @@ public class Health : MonoBehaviour
         //Debug.Log("collision");
 
         Enemy enemy = collision.GetComponent<Enemy>();
+        HealthPickup healthpickup = collision.GetComponent<HealthPickup>();
 
         if(enemy != null){
             health -= 10;
+        }else if(healthpickup != null){
+            health += 10;
+            if(health > 100){
+                health = 100;
+            }
+            healthSFX.Play();
+            healthpickup.vanish();
         }
         
     }

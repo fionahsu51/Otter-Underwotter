@@ -151,13 +151,18 @@ public class UpgradePopUp : MonoBehaviour
         switch (index)
         {
             case 0:
-                pistol.damage = 20f;
+                pistol.damage *= 2f;
                 Debug.Log("Pistol damage: ");
                 Debug.Log(pistol.damage);
+                break;
+            case 1:
+                shotgun.status = 1;
+                Debug.Log("case 1");
                 break;
             case 2:
                 pistol.scale = 0.9f;
                 pistol.speed = 10f;
+                pistol.damage = 20f;
                 Debug.Log("case 2");
                 break;
             case 3:

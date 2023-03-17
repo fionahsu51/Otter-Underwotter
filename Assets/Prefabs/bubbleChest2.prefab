@@ -138,5 +138,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e589e9967b8022498bfb0800754eff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amp: 0.5
+  amp: 0.2
   freq: 4

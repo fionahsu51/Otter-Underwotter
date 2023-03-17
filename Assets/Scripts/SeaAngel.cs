@@ -10,14 +10,16 @@ public class SeaAngel : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        this.distance = 7f;
+        this.distance = 9f;
         this.startMoving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        move();
+        if(status != 1){
+            move();
+        }
 
         if (health <= 0)
         {

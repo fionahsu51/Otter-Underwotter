@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: defpuff_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 294
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f2a0128481c4a458343d79d94db2c1
+      internalID: 1672491638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 294
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d69d22d6968496408ef85a4738b9c10
+      internalID: 1783630997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 294
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9698ab800effc4e941061a52ca011d
+      internalID: 1291629254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_4
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 294
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e91f573d351f5c48a62e3599cfa1d70
+      internalID: 1495926333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 294
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e17da2bb4d5554093997f8d53e4563
+      internalID: -682279613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 148
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b405e8c9044ac1e42bf41ce39d553a8e
+      internalID: 1177770084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_7
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 148
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb4bcb9d42924045bbea54c984aa7a0
+      internalID: 671426662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_8
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 148
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acb730cab36d8f4abc1cc2b0e1edfb0
+      internalID: 934412645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 148
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3f2ff53cfd4704592905156a7cbd41
+      internalID: -542984887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 148
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8aa55f8546930468f6763aaee2ad7a
+      internalID: 757058900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defpuff_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 240
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b994f09353cf2264aab4251dbd6b0a62
+      internalID: -984643853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +357,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      defpuff_4: 1495926333
+      defpuff_5: -682279613
+      defpuff_2: 1783630997
+      defpuff_8: 934412645
+      defpuff_11: -984643853
+      defpuff_10: 757058900
+      defpuff_1: 1672491638
+      defpuff_3: 1291629254
+      defpuff_7: 671426662
+      defpuff_6: 1177770084
+      defpuff_9: -542984887
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
