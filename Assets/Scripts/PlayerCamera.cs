@@ -11,6 +11,7 @@ public class PlayerCamera : MonoBehaviour
 
     public GameObject trackTargetLeft;
     public GameObject trackTargetRight;
+    public GameObject trackTargetBottom;
     
 
 
@@ -38,7 +39,8 @@ public class PlayerCamera : MonoBehaviour
         Vector3 targetPosition = followTransform.position;
         float minX = trackTargetLeft.transform.position.x;
         float maxX = trackTargetRight.transform.position.x;
-        float minY = trackTargetLeft.transform.position.y - trackTargetLeft.GetComponent<BoxCollider2D>().size.y / 2;
+        //float minY = trackTargetLeft.transform.position.y - trackTargetLeft.GetComponent<BoxCollider2D>().size.y / 2;
+        float minY = trackTargetBottom.transform.position.y + 3f;
         float maxY = trackTargetLeft.transform.position.y + trackTargetLeft.GetComponent<BoxCollider2D>().size.y / 2;
         Camera cam = GetComponent<Camera>();
         float height = cam.orthographicSize;

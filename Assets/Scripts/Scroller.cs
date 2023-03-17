@@ -20,6 +20,10 @@ public class Scroller : MonoBehaviour
     public Sprite twiRe1;
     public Sprite twiRe2;
     public Sprite twiNon3T;
+    public Sprite abNon1;
+    public Sprite abRe;
+    public Sprite abNon2;
+    public Sprite abEnd;
     //note for Casey: REMEMBER TO UPDATE ARRAY LENGTH WITH NEW ART!!
     private Sprite[] backgrounds;
     private float depth;
@@ -63,7 +67,7 @@ public class Scroller : MonoBehaviour
         bg2.transform.position = new Vector3(bg1.transform.position.x, bg1.transform.position.y + bg1.bounds.size.y/2, bg2.transform.position.z);
 
         // populate array  UPDATE WITH NEW ART!!
-        int sections = 5;  //5 for each non-repeating background
+        int sections = 8;  //5 for each non-repeating background
         for (int i = 0; i < sunlightRepeats + (twilightRepeats*2) + abyssRepeats; i++) {//MAKE SURE TO UPDATE abyssRepeats WITH HOW MANY REPEATS IT DOES!!!!
             sections ++;
         }
@@ -86,8 +90,12 @@ public class Scroller : MonoBehaviour
         }
         backgrounds[++at] = twiRe1;
         backgrounds[++at] = twiNon3T;
-        //lastTwilight = at;  lastTwilight = lastSunlight + 2 + 2 * twilightRepeats + 1 + 1
-        lastAbyss = at + 1;
+        backgrounds[++at] = abNon1;
+        for (int i = 0; i < abyssRepeats; i++) {
+            backgrounds[++at] = abRe;
+        }
+        backgrounds[++at] = abNon2;
+        backgrounds[++at] = abEnd;
         // array should be populated!
 
         //teleport the bottom collider to the end scene
@@ -95,17 +103,6 @@ public class Scroller : MonoBehaviour
         float bottomPos = ((-end-1) * bg1.bounds.size.y);
         bottomPos += (6 * bg1.bounds.size.y) / 10;
         bottom.transform.position = new Vector3(bottom.transform.position.x, bottomPos, bottom.transform.position.z);
-
-        /*string printval = "\n";
-        for (int i=0; i<backgrounds.Length; i++) {
-            printval += i.ToString() + " |";
-            if (backgrounds[i] != null) {
-                printval += backgrounds[i].name + "\n";
-            } else {
-                printval += "NULL\n";
-            }
-        }*/
-        //Debug.Log(printval);
         
     }
 
