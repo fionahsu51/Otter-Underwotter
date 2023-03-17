@@ -22,8 +22,8 @@ public class AlternateBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision){
         
-        Enemy enemy = collision.GetComponent<Enemy>();
-        Chest chest = collision.GetComponent<Chest>();
+        //Enemy enemy = collision.GetComponent<Enemy>();
+        //Chest chest = collision.GetComponent<Chest>();
 
         Enemy enemy = collision.GetComponent<Enemy>();
         Chest chest = collision.GetComponent<Chest>();
