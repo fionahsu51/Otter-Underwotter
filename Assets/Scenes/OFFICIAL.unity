@@ -5107,6 +5107,23 @@ MonoBehaviour:
   - {fileID: 7645572157628612575, guid: 087c96ccffdf3294ba64cc2e7c0b853e, type: 3}
   - {fileID: 4397416684194960657, guid: 1e3f301c9bc2d7e4b86188514377ca91, type: 3}
   jellyfish: {fileID: 2842565630152453232, guid: f262816ffe96e7241b3f437e45da6f28, type: 3}
+--- !u!114 &912874634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829920870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91beb22aacee2004081835946ea4a6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pufferfish: {fileID: 353140936140571131, guid: 9f09d1d5c7dbcdd4ba42f91b62ad9c30, type: 3}
+  stingray: {fileID: 3475366231999731764, guid: 37c20228c2d64324e9f0b8765bcf0e57, type: 3}
+  wolfEel: {fileID: 2560825365206917860, guid: 651bada9cc05f99409ebf37cd659145d, type: 3}
+  seaAngel: {fileID: 915532151345673146, guid: 5b6e399d455730442ae2f61088c37e6c, type: 3}
+  spawnInterval: 1
 --- !u!4 &918041769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4686542216662204017, guid: 0607b6a7d8af20248a26378e2f76d27c, type: 3}
@@ -10586,6 +10603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2105037968}
   - component: {fileID: 2105037969}
+  - component: {fileID: 2105037970}
   m_Layer: 0
   m_Name: Kickoff
   m_TagString: Untagged
@@ -10709,6 +10727,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2105037970
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105037967}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c4b3109f729ffb4fb488020f3bf568c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2105140964
 GameObject:
   m_ObjectHideFlags: 0
