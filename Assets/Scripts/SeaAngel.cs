@@ -10,7 +10,7 @@ public class SeaAngel : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        this.distance = 7f;
+        this.distance = 9f;
         this.startMoving = false;
     }
 

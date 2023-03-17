@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1235691184870313121}
   m_Layer: 0
   m_Name: Sea Angel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,9 +113,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: -0.2556346, y: 1.2722888}
+      - {x: -1.4032396, y: -0.33398846}
+      - {x: 1.0453534, y: -0.28866667}
 --- !u!50 &915532151345673147
 Rigidbody2D:
   serializedVersion: 4

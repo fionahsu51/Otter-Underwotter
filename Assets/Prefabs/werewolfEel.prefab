@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2560825365206917856}
   m_Layer: 0
   m_Name: werewolfEel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +121,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000000960604, y: -0.080581315}
-  m_Size: {x: 3.760001, y: 1.3765175}
+  m_Offset: {x: 0.07702696, y: -0.08058133}
+  m_Size: {x: 3.6059532, y: 1.3765191}
   m_Direction: 1
 --- !u!50 &2560825365206917856
 Rigidbody2D:

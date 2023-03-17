@@ -22,7 +22,7 @@ public class WerewolfEel : Enemy
         }
         //Debug.Log(dashing);
         if(dashing > 0){
-            speed = 20;
+            speed = 12;  //default was 20
         }else{
             speed = 0;
         }
