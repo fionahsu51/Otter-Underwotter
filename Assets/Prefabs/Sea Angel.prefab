@@ -156,6 +156,7 @@ MonoBehaviour:
   status: 0
   chestPrefab: {fileID: 1417188854212725375, guid: cb6bc9e3ace831246880c4d8fd9e111e, type: 3}
   healthPickupPrefab: {fileID: 9000776491121777182, guid: 99d2aa6aa8a81c446a5fc0bfea610979, type: 3}
+  deathBubblePrefab: {fileID: 2258410655760143054, guid: d580c5e9374963e41ab66230b48b709c, type: 3}
 --- !u!95 &1235691184870313121
 Animator:
   serializedVersion: 4

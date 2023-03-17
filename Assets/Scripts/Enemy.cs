@@ -14,6 +14,7 @@ public abstract class Enemy : MonoBehaviour
     public float status = 0;
     public GameObject chestPrefab;
     public GameObject healthPickupPrefab;
+    public GameObject deathBubblePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public abstract class Enemy : MonoBehaviour
     }
 
     public void die(){
+        Instantiate(deathBubblePrefab, transform.position, transform.rotation);
         int drop = Random.Range(0, 10);
         if(drop <= 5){
             Debug.Log("nothing");
