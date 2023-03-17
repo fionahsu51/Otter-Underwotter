@@ -51,6 +51,7 @@ public class Stingray : Enemy
             if (this.transform.position.x <= leftMax)
             {
                 switchDirection = false;
+                renderer.flipX = false;
             }
 
             else
