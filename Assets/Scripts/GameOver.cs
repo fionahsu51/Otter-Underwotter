@@ -9,11 +9,13 @@ public class GameOver : MonoBehaviour
     public Button yesButton;
     public Button noButton;
     public AudioSource bubblePop;
+    public AudioSource deathSound;
 
     void Start()
     {
         yesButton.onClick.AddListener(() => TaskOnClick(1));
         noButton.onClick.AddListener(() => TaskOnClick(2));
+        deathSound.Play();
     }
 
     // Update is called once per frame

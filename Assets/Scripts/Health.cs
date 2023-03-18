@@ -10,7 +10,6 @@ public class Health : MonoBehaviour
     public GameObject bubble;
     public AudioSource healthSFX;
     public AudioSource[] hurtSounds;
-    public AudioSource deathSound;
     public AudioSource lowHPSound;
     // Update is called once per frame
 
@@ -27,7 +26,6 @@ public class Health : MonoBehaviour
 
         if(health <= 0){
             //Debug.Log("health 0");
-            deathSound.Play();
             SceneManager.LoadScene("Game_Over");
         }
 
