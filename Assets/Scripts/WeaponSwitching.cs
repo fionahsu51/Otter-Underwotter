@@ -9,6 +9,7 @@ public class WeaponSwitching : MonoBehaviour
     public int selectedWeapon = 0;
     public bool popup = false;
     public bool ready = false;
+    public AudioSource switchSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class WeaponSwitching : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
         {
+            switchSFX.Play();
             if(selectedWeapon >= transform.childCount - 1)
             {
                 selectedWeapon = 0;
