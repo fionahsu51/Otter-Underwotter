@@ -31,10 +31,16 @@ public class Health : MonoBehaviour
 
         if(health <= 20)
         {
-            if(!lowHPSound.isPlaying)
+            if(!lowHPSound.isPlaying && Time.timeScale > 0)
             {
                 lowHPSound.Play();
             }
+
+            if (Time.timeScale <= 0)
+            {
+                lowHPSound.Pause();
+            }
+
         }
 
         if(health > 20)
