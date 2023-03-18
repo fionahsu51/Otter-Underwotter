@@ -4,6 +4,7 @@ using System.Collections;
 
 public class FadeIn : MonoBehaviour
 {
+    public AudioSource endTheme;
     public int selectedPanel = 0;
     public Image _image;
     public Image TYText;
@@ -20,7 +21,7 @@ public class FadeIn : MonoBehaviour
     {
         int previousSelectedPanel = selectedPanel;
 
-        if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
+        if (Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0)
         {
             if (selectedPanel == 9)
             {
