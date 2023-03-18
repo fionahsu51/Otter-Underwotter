@@ -10,7 +10,7 @@ public class Depth : MonoBehaviour
     public TMP_Text depthText;
     int playerDepth;
     int previousPlayerDepth;
-    string feet_string = " ft";
+    string feet_string = " m";
 
     void Start()
     {

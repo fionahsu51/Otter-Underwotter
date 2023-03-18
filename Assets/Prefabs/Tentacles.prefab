@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1125849031
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ef2515266541a454c850bfa62df75fbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dccdc1fa797646c42af6b1f41f6d85f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,6 +117,10 @@ MonoBehaviour:
   speed: 0
   leftBound: 0
   rightBound: 0
+  status: 0
+  chestPrefab: {fileID: 0}
+  healthPickupPrefab: {fileID: 0}
+  deathBubblePrefab: {fileID: 0}
 --- !u!50 &5550769343936561882
 Rigidbody2D:
   serializedVersion: 4
@@ -151,11 +155,11 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.33, y: 1.26}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.73, y: 9.08}
+    oldSize: {x: 8.86, y: 6.56}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
