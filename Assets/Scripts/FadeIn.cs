@@ -24,7 +24,7 @@ public class EndingSequence : MonoBehaviour
     {
         int previousSelectedPanel = selectedPanel;
 
-        if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
+        if (Input.GetKeyDown(KeyCode.X) && Time.timeScale > 0)
         {
             //If last panel
             if (selectedPanel == 9)
