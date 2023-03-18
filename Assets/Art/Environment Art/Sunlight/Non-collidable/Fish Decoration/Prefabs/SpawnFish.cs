@@ -8,6 +8,9 @@ public class SpawnFish : MonoBehaviour
     public GameObject[] fishLeft;
     public GameObject[] fishRight;
     public GameObject jellyfish;
+    public GameObject[] abyssFishLeft;
+    public GameObject[] abyssFishRight;
+    public GameObject abyssJellyfish;
     public GameObject plankton;
     private float halfLength;
     private float halfHeight;
@@ -66,6 +69,7 @@ public class SpawnFish : MonoBehaviour
             int leftOrRight = Random.Range(0, 2);
             if (leftOrRight == 0) { //left
                 GameObject randFish = fishLeft[Random.Range(0, fishLeft.Length)];
+                if (transform.position.y < -210f) randFish = abyssFishLeft[Random.Range(0, abyssFishLeft.Length)];
                 Vector3 pos = new Vector3(transform.position.x + halfLength, atY, transform.position.z);
                 Instantiate(randFish, pos, Quaternion.identity);
             }
@@ -81,7 +85,8 @@ public class SpawnFish : MonoBehaviour
             /*peanutbutter*/jellyTime = 0f;
             float atX = Random.Range(transform.position.x - halfLength * 1.5f, transform.position.x + halfLength * 1.5f);
             Vector3 pos = new Vector3(atX, transform.position.y - halfHeight, transform.position.z);
-            Instantiate(/*peanutbutter*/jellyfish, pos, Quaternion.identity);
+            if (transform.position.y < -210f) Instantiate(abyssJellyfish, pos, Quaternion.identity);
+            else Instantiate(/*peanutbutter*/jellyfish, pos, Quaternion.identity);
         }
 
         planktonTime += Time.deltaTime;

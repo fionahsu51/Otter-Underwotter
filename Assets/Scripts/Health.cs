@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public float health;
     public GameObject bubble;
     public AudioSource healthSFX;
+    public AudioSource[] hurtSounds;
     // Update is called once per frame
     void Update()
     {
@@ -17,7 +18,7 @@ public class Health : MonoBehaviour
         bubble.transform.localScale = new Vector3(health/100 * 0.9128754f, health/100 * 0.9128754f, 0.9128754f);
 
         if(health <= 0){
-            Debug.Log("health 0");
+            //Debug.Log("health 0");
 
             SceneManager.LoadScene("Game_Over");
         }
@@ -31,6 +32,7 @@ public class Health : MonoBehaviour
         HealthPickup healthpickup = collision.GetComponent<HealthPickup>();
 
         if(enemy != null){
+            hurtSounds[Random.Range(0, hurtSounds.Length-1)].Play();
             health -= 10;
         }else if(healthpickup != null){
             health += 10;
