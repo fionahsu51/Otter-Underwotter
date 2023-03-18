@@ -8,10 +8,12 @@ public class WerewolfEel : Enemy
     private int dashing = 1;
     private float turnRate = 150f;
     public SpriteRenderer sprite;
+    private AudioSource deathSFX;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("Dash");
+        deathSFX = GameObject.Find("Death_Anouncer").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class WerewolfEel : Enemy
         }
 
         if(health <= 0){
+            deathSFX.Play();
             die();
         }
     }

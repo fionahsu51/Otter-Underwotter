@@ -8,15 +8,19 @@ public class SpawnFish : MonoBehaviour
     public GameObject[] fishLeft;
     public GameObject[] fishRight;
     public GameObject jellyfish;
+    public GameObject plankton;
     private float halfLength;
     private float halfHeight;
     private float fishSpawnInterval;
     private float jellySpawnInterval;
+    private float planktonSpawnInterval;
     private float fishTime;
     private float /*peanutbutter*/jellyTime;
+    private float planktonTime;
     
     private float sunFishSpawnInterval;
     private float sunJellySpawnInterval;
+    private float abPlanktonSpawnInterval;
 
 
     // Start is called before the first frame update
@@ -26,11 +30,15 @@ public class SpawnFish : MonoBehaviour
         halfHeight = 6f;
         fishTime = 0f;
         /*peanutbutter*/jellyTime = 0f;
+        planktonTime = 0f;
         fishSpawnInterval = 0.3f;
         /*peanutbutter*/jellySpawnInterval = 0.6f;
+        planktonSpawnInterval = 0.45f;
+
 
         sunFishSpawnInterval = fishSpawnInterval;
         sunJellySpawnInterval = jellySpawnInterval;
+        abPlanktonSpawnInterval = planktonSpawnInterval;
         
     }
 
@@ -40,9 +48,15 @@ public class SpawnFish : MonoBehaviour
         if (transform.position.y >= -80f) {
             fishSpawnInterval = sunFishSpawnInterval;
             /*peanutbutter*/jellySpawnInterval = sunJellySpawnInterval;
-        } else if (transform.position.y < -80f) {
+            planktonSpawnInterval = 99999f;
+        } else if (transform.position.y < -80f && transform.position.y > -210f) {
             fishSpawnInterval = sunFishSpawnInterval * 3f;
             /*peanutbutter*/jellySpawnInterval = sunJellySpawnInterval * 3f;
+            planktonSpawnInterval = 99999f;
+        } else {
+            fishSpawnInterval = sunFishSpawnInterval * 15f;
+            /*peanutbutter*/jellySpawnInterval = sunJellySpawnInterval * 15f;
+            planktonSpawnInterval = abPlanktonSpawnInterval;
         }
 
         fishTime += Time.deltaTime;
@@ -68,6 +82,17 @@ public class SpawnFish : MonoBehaviour
             float atX = Random.Range(transform.position.x - halfLength * 1.5f, transform.position.x + halfLength * 1.5f);
             Vector3 pos = new Vector3(atX, transform.position.y - halfHeight, transform.position.z);
             Instantiate(/*peanutbutter*/jellyfish, pos, Quaternion.identity);
+        }
+
+        planktonTime += Time.deltaTime;
+        if (planktonTime > planktonSpawnInterval) {
+            planktonTime = 0f;
+            float atX = Random.Range(transform.position.x - halfLength * 1.5f, transform.position.x + halfLength * 1.5f);
+            float atY = transform.position.y;
+            if (Random.Range(0, 1) == 1) atY += halfHeight;
+            else atY -= halfHeight;
+            Vector3 pos = new Vector3(atX, atY, transform.position.z);
+            Instantiate(plankton, pos, Quaternion.identity);
         }
         
     }

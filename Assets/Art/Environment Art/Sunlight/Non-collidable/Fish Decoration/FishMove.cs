@@ -6,13 +6,13 @@ public class FishMove : MonoBehaviour
 {
     public float moveX;
     public float moveY;
-    private float time;
+    //private float time;
     private float debugTime;
     public string direction;
     // Start is called before the first frame update
     void Start()
     {
-        time = 0f;
+        //time = 0f;
         debugTime = 0f;
         
     }

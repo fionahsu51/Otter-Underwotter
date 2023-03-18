@@ -10,11 +10,13 @@ public class Stingray : Enemy
     public float leftMax;
     public float rightMax;
     SpriteRenderer renderer;
+    private AudioSource deathSFX;
 
     void Start()
     {
         switchDirection = false;
         renderer = GetComponent<SpriteRenderer>();
+        deathSFX = GameObject.Find("Death_Anouncer").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -25,6 +27,7 @@ public class Stingray : Enemy
 
         if (health <= 0)
         {
+            deathSFX.Play();
             die();
         }
     }
