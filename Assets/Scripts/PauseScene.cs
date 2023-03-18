@@ -26,7 +26,7 @@ public class PauseScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && paused == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
         {
             Time.timeScale = 0;
             //Cursor.lockState = CursorLockMode.Locked;
@@ -39,7 +39,7 @@ public class PauseScene : MonoBehaviour
             Debug.Log("Escape key was pressed");
         }
 
-        else if (Input.GetKeyDown(KeyCode.P) && paused == true)
+        else if (Input.GetKeyDown(KeyCode.Escape) && paused == true)
         {
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.None;

@@ -41,6 +41,19 @@ public class KickOffSound : MonoBehaviour
             kickoffAudio.Stop();
             swimmingAudio.Pause();
         }
+
+        if (Time.timeScale <= 0)
+        {
+            ambienceAudio.Pause();
+        }
+
+        if (Time.timeScale > 0)
+        {
+            if(!ambienceAudio.isPlaying)
+            {
+                ambienceAudio.Play();
+            }    
+        }
     }
 
 
