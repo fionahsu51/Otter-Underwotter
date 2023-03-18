@@ -9,36 +9,40 @@ public class EnemySpawn : MonoBehaviour
     public GameObject wolfEel;
     public GameObject seaAngel;
     private float time;
-    private float spawnInterval;
-    private int maximumEnemiesOnScreen;
+    public float spawnInterval;
+    //private int maximumEnemiesOnScreen;
+    public float maximumEnemiesOnScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnInterval = 3.5f;
-        maximumEnemiesOnScreen = 6;
+        //spawnInterval = 3.5f;
+        //maximumEnemiesOnScreen = 6;
         
     }
 
     // Update is called once per frame
     void Update()
     {
+
         time += Time.deltaTime;
         if (time >= spawnInterval) {
             time = 0f;
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             int nearbyEnemies = 0;
             foreach (GameObject enemy in enemies) {
-                if (Vector3.Distance(transform.position, enemy.transform.position) < 9f) {
+                if (Vector3.Distance(transform.position, enemy.transform.position) <= 9f) {
                     nearbyEnemies++;
                 }
             }
-            if (nearbyEnemies < maximumEnemiesOnScreen) {
+            //Debug.Log(nearbyEnemies.ToString() + "    " + Random.Range(0.0f, 1000.1f).ToString());
+            if (nearbyEnemies < maximumEnemiesOnScreen && transform.position.y > -295f) {
                 int gotRand = 0;
                 if (transform.position.y > -77f) {
                     gotRand = Random.Range(0, 4);
                 }
                 else gotRand = Random.Range(3, 6);
+                //Debug.Log(gotRand.ToString() + "   " + Random.Range(0f, 1000f).ToString());
                 if (gotRand == 0) { //pufferfish swarm
                     //first layer
                     Vector3 pos = new Vector3(transform.position.x - 7f, transform.position.y - 13f, transform.position.z);
@@ -107,14 +111,10 @@ public class EnemySpawn : MonoBehaviour
                     //left side
                     Vector3 pos = new Vector3(transform.position.x - 8f, transform.position.y - 6f, transform.position.z);
                     Instantiate(wolfEel, pos, Quaternion.identity);
-                    pos = new Vector3(transform.position.x - 8f, transform.position.y - 9f, transform.position.z);
-                    Instantiate(wolfEel, pos, Quaternion.identity);
                     pos = new Vector3(transform.position.x - 7f, transform.position.y - 13f, transform.position.z);
                     Instantiate(wolfEel, pos, Quaternion.identity);
                     //right side
                     pos = new Vector3(transform.position.x + 8f, transform.position.y - 6f, transform.position.z);
-                    Instantiate(wolfEel, pos, Quaternion.identity);
-                    pos = new Vector3(transform.position.x + 8f, transform.position.y - 9f, transform.position.z);
                     Instantiate(wolfEel, pos, Quaternion.identity);
                     pos = new Vector3(transform.position.x + 7f, transform.position.y - 13f, transform.position.z);
                     Instantiate(wolfEel, pos, Quaternion.identity);

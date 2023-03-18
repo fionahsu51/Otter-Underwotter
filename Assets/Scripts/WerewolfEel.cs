@@ -33,6 +33,8 @@ public class WerewolfEel : Enemy
             deathSFX.Play();
             die();
         }
+        //if too far from otter, despawn
+        if (Vector3.Distance(GameObject.Find("Otter").transform.position, transform.position) > 20f) Destroy(gameObject);
     }
 
     public override void move(){

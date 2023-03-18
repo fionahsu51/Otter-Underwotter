@@ -55,6 +55,9 @@ public class PufferFish : Enemy
             die();
         }
 
+        //if too far from otter, despawn
+        if (Vector3.Distance(GameObject.Find("Otter").transform.position, transform.position) > 20f) Destroy(gameObject);
+
 
     }
 
