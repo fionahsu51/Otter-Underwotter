@@ -6,12 +6,14 @@ public class SeaAngel : Enemy
 {
     float distance;
     bool startMoving;
+    private AudioSource deathSFX;
 
     // Start is called before the first frame update
     void Start()
     {
         this.distance = 9f;
         this.startMoving = false;
+        deathSFX = GameObject.Find("Death_Anouncer").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class SeaAngel : Enemy
 
         if (health <= 0)
         {
+            deathSFX.Play();
             die();
         }
     }

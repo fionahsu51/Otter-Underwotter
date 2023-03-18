@@ -142,6 +142,11 @@ MonoBehaviour:
   shootingPoint: {fileID: 0}
   bulletPrefab: {fileID: 6491261112853591216, guid: 2a9db9cc34b14e946a52a0ec026a3662, type: 3}
   pressedSpace: 0
+  damage: 0
+  scale: 0.3
+  speed: 0
+  takenIndices: 
+  pisotlShootSFX: {fileID: 0}
 --- !u!114 &5009535751057048225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   bubble: {fileID: 0}
+  healthSFX: {fileID: 0}
 --- !u!95 &5009535751057048227
 Animator:
   serializedVersion: 4
@@ -189,6 +195,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.64, y: 2.36}
+  m_Offset: {x: 0, y: -0.075049825}
+  m_Size: {x: 1.6399999, y: 2.2099}
   m_Direction: 0

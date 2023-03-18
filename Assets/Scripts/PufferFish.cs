@@ -15,7 +15,10 @@ public class PufferFish : Enemy
     private BoxCollider2D collider;
     public float scaleIncrease;
     public AudioSource inflateSFX;
+    private AudioSource deathSFX;
     public Animator animator;
+
+    private bool dead;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,7 @@ public class PufferFish : Enemy
         this.collider = GetComponent<BoxCollider2D>();
         this.scaleIncrease = 2.5f;
         animator = GetComponent<Animator>();
+        deathSFX = GameObject.Find("Death_Anouncer").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,10 +49,12 @@ public class PufferFish : Enemy
         if(status != 1){
             move();
         }
-
-        if(health <= 0){
+        
+        if (health <= 0) {
+            deathSFX.Play();
             die();
         }
+
 
     }
 
