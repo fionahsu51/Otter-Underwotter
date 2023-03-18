@@ -40,12 +40,12 @@ public abstract class Enemy : MonoBehaviour
         Instantiate(deathBubblePrefab, transform.position, transform.rotation);
         int drop = Random.Range(0, 10);
         if(drop <= 5){
-            Debug.Log("nothing");
+            //Debug.Log("nothing");
         }else if(drop > 5 && drop <= 8){
-            Debug.Log("health pickup");
+            //Debug.Log("health pickup");
             Instantiate(healthPickupPrefab, transform.position, transform.rotation);
         }else{
-            Debug.Log("chest");
+            //Debug.Log("chest");
             Instantiate(chestPrefab, transform.position, transform.rotation);
         }
         Destroy(gameObject);

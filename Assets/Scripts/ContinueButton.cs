@@ -11,6 +11,7 @@ public class ContinueButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.FindGameObjectWithTag("TitleMusic").GetComponent<TitleMusic>().StopMusic();
         lightContinue.SetActive(true);
         darkContinue.SetActive(false);
     }

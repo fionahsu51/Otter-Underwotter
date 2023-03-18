@@ -24,6 +24,13 @@ public class TentacleBoss : Enemy
             healthPickupPrefab.SetActive(false);
             deathSFX.Play();
             endloader.StartCoroutine("LoadEnd");
+
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach(GameObject enemy in enemies){
+                Enemy e = enemy.GetComponent<Enemy>();
+                e.die();
+            }
+
             die();
         }
     }

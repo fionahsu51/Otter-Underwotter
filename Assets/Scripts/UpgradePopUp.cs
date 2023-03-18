@@ -72,7 +72,7 @@ public class UpgradePopUp : MonoBehaviour
         option2.onClick.AddListener(() => TaskOnClick(2));
 
         //Generate Upgrades
-        if (pistol.takenIndices.Count <= 5)
+        if (pistol.takenIndices.Count <= 6)
         {
             option1index = Random.Range(0, 6);
             while (pistol.takenIndices.Contains(option1index))
@@ -102,6 +102,7 @@ public class UpgradePopUp : MonoBehaviour
         else
         {
             NoMoreUpgrades = true;
+            Close();
         }
 
     }
@@ -119,14 +120,14 @@ public class UpgradePopUp : MonoBehaviour
     {
         if (button == 1)
         {
-            Debug.Log("option 1 clicked!");
+            //Debug.Log("option 1 clicked!");
             ApplyUpgrade(option1index);
             pistol.takenIndices.Add(option1index);
             Close();
         }
         else
         {
-            Debug.Log("option 2 clicked!");
+            //Debug.Log("option 2 clicked!");
             ApplyUpgrade(option2index);
             pistol.takenIndices.Add(option2index);
             Close();
@@ -152,31 +153,31 @@ public class UpgradePopUp : MonoBehaviour
         {
             case 0:
                 pistol.damage *= 2f;
-                Debug.Log("Pistol damage: ");
-                Debug.Log(pistol.damage);
+                //Debug.Log("Pistol damage: ");
+                //Debug.Log(pistol.damage);
                 break;
             case 1:
                 shotgun.status = 1;
-                Debug.Log("case 1");
+                //Debug.Log("case 1");
                 break;
             case 2:
                 pistol.scale = 0.9f;
                 pistol.speed = 10f;
                 pistol.damage = 20f;
-                Debug.Log("case 2");
+                //Debug.Log("case 2");
                 break;
             case 3:
                 shotgun.range = 0.5f;
-                Debug.Log("case 3");
+                //Debug.Log("case 3");
                 break;
             case 4:
                 shotgun.fireRate = 0.4f;
-                Debug.Log("case 4");
+                //Debug.Log("case 4");
                 break;
             case 5:
                 pistol.speed *= 1.5f;
-                Debug.Log("case 5");
-                Debug.Log(pistol.speed);
+                //Debug.Log("case 5");
+                //Debug.Log(pistol.speed);
                 break;
             default:
                 Debug.Log("No upgrade applied");
