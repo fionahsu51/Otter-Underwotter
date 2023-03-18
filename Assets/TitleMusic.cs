@@ -2,37 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//From NuffuruDevelopment, thank you! https://answers.unity.com/questions/1260393/make-music-continue-playing-through-scenes.html
 public class TitleMusic : MonoBehaviour
 {
 
-    public AudioSource _audioSource;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
+    private AudioSource _audioSource;
+    private GameObject[] other;
+    private bool NotFirst = false;
     private void Awake()
     {
+        other = GameObject.FindGameObjectsWithTag("TitleMusic");
+
+        foreach (GameObject oneOther in other)
+        {
+            if (oneOther.scene.buildIndex == -1)
+            {
+                NotFirst = true;
+            }
+        }
+
+        if (NotFirst == true)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(transform.gameObject);
         _audioSource = GetComponent<AudioSource>();
     }
- 
+
     public void PlayMusic()
     {
         if (_audioSource.isPlaying) return;
         _audioSource.Play();
     }
- 
+
     public void StopMusic()
     {
         _audioSource.Stop();
