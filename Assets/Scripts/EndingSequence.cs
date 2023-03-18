@@ -14,7 +14,8 @@ public class FadeIn : MonoBehaviour
     void Start()
     {
         SelectPanel();
-        //StartCoroutine(Fadeout(_image, _fadeSpeed));
+        endTheme.loop = true;
+        endTheme.Play();
     }
 
     void Update()

@@ -11,12 +11,15 @@ public class EndingSequence : MonoBehaviour
     public Image FPText;
     public Image ZIndicator;
     private bool lastPanel = false;
+    public AudioSource endTheme;
 
     void Start()
     {
         ZIndicator.enabled = true;
         TYText.enabled = false;
         FPText.enabled = false;
+        endTheme.loop = true;
+        endTheme.Play();
         SelectPanel();
     }
 
