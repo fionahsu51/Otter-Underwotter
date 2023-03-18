@@ -72,7 +72,7 @@ public class UpgradePopUp : MonoBehaviour
         option2.onClick.AddListener(() => TaskOnClick(2));
 
         //Generate Upgrades
-        if (pistol.takenIndices.Count <= 6)
+        if (pistol.takenIndices.Count <= 5)
         {
             option1index = Random.Range(0, 6);
             while (pistol.takenIndices.Contains(option1index))

@@ -38,7 +38,7 @@ public abstract class Enemy : MonoBehaviour
 
     public void die(){
         Instantiate(deathBubblePrefab, transform.position, transform.rotation);
-        int drop = Random.Range(0, 10);
+        int drop = 10;//Random.Range(0, 10);
         if(drop <= 5){
             //Debug.Log("nothing");
         }else if(drop > 5 && drop <= 8){
