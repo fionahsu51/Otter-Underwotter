@@ -46,7 +46,7 @@ public abstract class Enemy : MonoBehaviour
             Instantiate(healthPickupPrefab, transform.position, transform.rotation);
         }else{
             //Debug.Log("chest");
-            Instantiate(chestPrefab, transform.position, transform.rotation);
+            Instantiate(chestPrefab, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
     }

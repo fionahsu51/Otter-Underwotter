@@ -9,6 +9,7 @@ public class WerewolfEel : Enemy
     private float turnRate = 150f;
     public SpriteRenderer sprite;
     private AudioSource deathSFX;
+    public AudioSource eelSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +69,7 @@ public class WerewolfEel : Enemy
 
     IEnumerator Dash()
     {
+        eelSFX.Play();
         for (; ; )
         {
             dashing *= -1;

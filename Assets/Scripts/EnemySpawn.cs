@@ -114,10 +114,10 @@ public class EnemySpawn : MonoBehaviour
                     pos = new Vector3(transform.position.x - 7f, transform.position.y - 13f, transform.position.z);
                     Instantiate(wolfEel, pos, Quaternion.identity);
                     //right side
-                    pos = new Vector3(transform.position.x + 8f, transform.position.y - 6f, transform.position.z);
-                    Instantiate(wolfEel, pos, Quaternion.identity);
-                    pos = new Vector3(transform.position.x + 7f, transform.position.y - 13f, transform.position.z);
-                    Instantiate(wolfEel, pos, Quaternion.identity);
+                    //pos = new Vector3(transform.position.x + 8f, transform.position.y - 6f, transform.position.z);
+                    //Instantiate(wolfEel, pos, Quaternion.identity);
+                    //pos = new Vector3(transform.position.x + 7f, transform.position.y - 13f, transform.position.z);
+                    //Instantiate(wolfEel, pos, Quaternion.identity);
                 } else if (gotRand == 5) { //Sea Angels Rising
                     Vector3 pos = new Vector3(transform.position.x - 7.5f, transform.position.y - 13f, transform.position.z);
                     Instantiate(seaAngel, pos, Quaternion.identity);
