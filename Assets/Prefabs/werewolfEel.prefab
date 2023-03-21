@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7028089b7745a0f489ce8966b4eda442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 40
   speed: 0
   leftBound: 0
   rightBound: 0
@@ -123,8 +123,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07702696, y: -0.08058133}
-  m_Size: {x: 3.6059532, y: 1.3765191}
+  m_Offset: {x: 0.0071760323, y: -0.08494682}
+  m_Size: {x: 3.4662602, y: 0.5645302}
   m_Direction: 1
 --- !u!50 &2560825365206917856
 Rigidbody2D:
