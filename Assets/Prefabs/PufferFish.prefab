@@ -114,7 +114,6 @@ MonoBehaviour:
   inflatedSprite: {fileID: 995649572, guid: 951dad20c804ee1478fb6915bb99f58c, type: 3}
   scaleIncrease: 0
   inflateSFX: {fileID: 7841658126623705339}
-  deathSFX: {fileID: 1775829535404170464}
   animator: {fileID: 0}
 --- !u!61 &353140936140571125
 BoxCollider2D:
